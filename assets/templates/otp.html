@@ -1,0 +1,112 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>CHATBOT</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon.png">
+    <link rel="stylesheet" href="{% static 'vendor/owl-carousel/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'vendor/owl-carousel/css/owl.theme.default.min.css' %}">
+    <link href="{% static 'vendor/jqvmap/css/jqvmap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+
+
+</head>
+
+<body class="h-100">
+    <style>
+        .otp-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 15px;
+            width: 100%;
+            max-width: 400px;
+            margin: 50px auto;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+    
+        .otp-input {
+            width: 60px;
+            height: 60px;
+            margin: 0 10px;
+            font-size: 24px;
+            text-align: center;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+    
+        .otp-input:focus {
+            border-color: #3498db;
+            box-shadow: 0 0 10px rgba(52, 152, 219, 0.4);
+        }
+    
+        .otp-container button {
+            margin-top: 20px;
+            background-color: #e74c3c;
+            color: #ffffff;
+            padding: 12px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+    
+        .otp-container button:hover {
+            background-color: #c0392b;
+        }
+    
+    </style>
+    
+    <form method="POST"enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="otp-container" id="OTP">
+            <div>
+                <input type="number" class="otp-input" pattern="[0-9]*" inputmode="numeric" maxlength="1" id="otp1" name="otp1">
+                <input type="number" class="otp-input" pattern="[0-9]*" inputmode="numeric" maxlength="1" id="otp2" name="otp2">
+                <input type="number" class="otp-input" pattern="[0-9]*" inputmode="numeric" maxlength="1" id="otp3" name="otp3">
+                <input type="number" class="otp-input" pattern="[0-9]*" inputmode="numeric" maxlength="1" id="otp4" name="otp4">
+            </div>
+            <div style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+                <button type="submit" class="btn" id="submitOtpBtn" 
+                        style="background-color: #4761ff; color: #ffffff;">Submit</button>
+            </div>
+        </div>
+    </form>
+    
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var inputs = document.querySelectorAll('#OTP .otp-input');
+            inputs.forEach((input, index) => {
+                input.addEventListener('keydown', function(event) {
+                    if (event.key === "Backspace" && this.value === '') {
+                        if (index > 0) {
+                            inputs[index - 1].focus();
+                        }
+                    }
+                });
+                input.addEventListener('input', function() {
+                    var value = this.value;
+                    if (value.length === 1 && index < inputs.length - 1) {
+                        inputs[index + 1].focus();
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>

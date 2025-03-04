@@ -1,0 +1,185 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>CHATBOT</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon.png">
+    <link rel="stylesheet" href="{% static 'vendor/owl-carousel/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'vendor/owl-carousel/css/owl.theme.default.min.css' %}">
+    <link href="{% static 'vendor/jqvmap/css/jqvmap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+
+
+</head>
+
+<body class="h-100">
+    <div class="authincation h-100">
+        <div class="container-fluid h-100">
+            <div class="row justify-content-center h-100 align-items-center">
+                <div class="col-md-6">
+                    <div class="authincation-content">
+                        <div class="row no-gutters">
+                            <div class="col-xl-12">
+                                <div class="auth-form">
+                                    <h4 class="text-center mb-4">Sign in your account</h4>
+                                    <style>
+                                        .login-form {
+                                            max-width: 300px;
+                                            margin: 50px auto;
+                                            padding: 20px;
+                                            background: #f9f9f9;
+                                            border-radius: 8px;
+                                            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+                                          }
+                                          
+                                          h2 {
+                                            text-align: center;
+                                            color: #333;
+                                            margin-bottom: 20px;
+                                          }
+                                          
+                                          .input-group {
+                                            position: relative;
+                                            margin-bottom: 20px;
+                                          }
+                                          
+                                          input {
+                                            width: 100%;
+                                            padding: 10px 0;
+                                            font-size: 16px;
+                                            color: #333;
+                                            border: none;
+                                            border-bottom: 1px solid #ddd;
+                                            outline: none;
+                                            background: transparent;
+                                            transition: border-color 0.2s;
+                                          }
+                                          
+                                          label {
+                                            position: absolute;
+                                            top: 10px;
+                                            left: 0;
+                                            font-size: 16px;
+                                            color: #999;
+                                            pointer-events: none;
+                                            transition: 0.2s ease all;
+                                          }
+                                          
+                                          input:focus ~ label, input:valid ~ label {
+                                            top: -20px;
+                                            font-size: 14px;
+                                            color: #5264AE;
+                                          }
+                                          
+                                          .highlight {
+                                            position: absolute;
+                                            height: 60%;
+                                            width: 100px;
+                                            top: 25%;
+                                            left: 0;
+                                            pointer-events: none;
+                                            opacity: 0.5;
+                                          }
+                                          
+                                          input:focus ~ .highlight {
+                                            animation: inputHighlighter 0.3s ease;
+                                          }
+                                          
+                                          @keyframes inputHighlighter {
+                                            from { background: #5264AE; }
+                                            to 	{ width: 0; background: transparent; }
+                                          }
+                                          
+                                          .submit-btn {
+                                            width: 100%;
+                                            padding: 10px;
+                                            background: #5264AE;
+                                            color: #fff;
+                                            border: none;
+                                            border-radius: 4px;
+                                            font-size: 16px;
+                                            cursor: pointer;
+                                            transition: background 0.3s ease;
+                                          }
+                                          
+                                          .submit-btn:hover {
+                                            background: #3f51b5;
+                                          }
+                                          
+                                    </style>
+                                    <form method="POST" enctype="multipart/form-data" class="login-form">
+                                        {% csrf_token %}
+                                        <h2>Login</h2>
+                                        <div class="input-group">
+                                          <input type="email" id="username" name="email" required>
+                                          <label for="username">Email</label>
+                                          <span class="highlight"></span>
+                                        </div>
+                                        <div class="input-group">
+                                          <input type="password" id="password" name="password" required>
+                                          <label for="password">Password</label>
+                                          <span class="highlight"></span>
+                                        </div>
+                                        <button type="submit" class="submit-btn">Login</button>
+                                      </form>
+                                      
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="new-account mt-3">
+                                        <h5>Don't have an account? <a class="text-primary" href="{% url 'register' %}">Sign up</a></h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <!-- Required vendors -->
+    <script src="{% static 'vendor/global/global.min.js' %}"></script>
+    <script src="{% static 'js/quixnav-init.js' %}" ></script>
+    <script src="{% static 'js/custom.min.js' %}" ></script>
+
+
+    <!-- Vectormap -->
+    <script src="{% static 'vendor/raphael/raphael.min.js' %}"></script>
+    <script src="{% static 'vendor/morris/morris.min.js' %}"></script>
+
+
+    <script src="{% static 'vendor/circle-progress/circle-progress.min.js' %}"></script>
+    <script src="{% static 'vendor/chart.js/Chart.bundle.min.js' %}"></script>
+
+    <script src="{% static 'vendor/gaugeJS/dist/gauge.min.js' %}"></script>
+
+    <!--  flot-chart js -->
+    <script src="{% static 'vendor/flot/jquery.flot.js' %}"></script>
+    <script src="{% static 'vendor/flot/jquery.flot.resize.js' %}"></script>
+
+    <!-- Owl Carousel -->
+    <script src="{% static 'vendor/owl-carousel/js/owl.carousel.min.js' %}"></script>
+
+    <!-- Counter Up -->
+    <script src="{% static 'vendor/jqvmap/js/jquery.vmap.min.js' %}"></script>
+    <script src="{% static 'vendor/jqvmap/js/jquery.vmap.usa.js' %}"></script>
+    <script src="{% static 'vendor/jquery.counterup/jquery.counterup.min.js' %}"></script>
+
+
+    <script src="{% static 'js/dashboard/dashboard-1.js' %}"></script>
+
+</body>
+
+</html>

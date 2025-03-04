@@ -1,0 +1,351 @@
+VVIT Guntur - College Overview
+About VVIT
+Full Name: Vasireddy Venkatadri Institute of Technology
+Location: Nambur, Guntur, Andhra Pradesh
+Established: 2007
+Affiliated to: JNTUK (Jawaharlal Nehru Technological University Kakinada)
+NBA Accredited Programs
+NAAC Accredited Institution
+Academic Programs
+B.Tech Programs:
+
+Computer Science and Engineering
+Electronics and Communication Engineering
+Electrical and Electronics Engineering
+Mechanical Engineering
+Civil Engineering
+CSE (Artificial Intelligence and Machine Learning)
+CSE (Data Science)
+CSE (IoT)
+M.Tech Programs:
+
+Computer Science and Engineering
+VLSI & Embedded Systems
+Power Electronics & Electrical Drives
+Facilities
+Digital Library
+Sports Complex
+Swimming Pool
+Hostel Facilities
+Transportation
+Solar Power Plant
+Innovation Center
+Skill Development Center
+Placements Highlights
+Consistent placement record with top companies
+Major Recruiters:
+TCS
+Infosys
+Wipro
+Cognizant
+Tech Mahindra
+HCL
+Amazon
+Microsoft
+IBM
+Notable Features
+Strong Industry Partnerships
+Research Centers
+Innovation Labs
+Entrepreneurship Development Cell
+Training and Placement Cell
+Student Chapters of Professional Bodies
+Focus on Holistic Development
+Green Campus Initiative
+Contact Information
+Address: Nambur (V), Guntur (Dt)
+Andhra Pradesh - 522508
+Website: www.vvitguntur.com                                               VVIT Guntur - Academic Structure and Faculty
+Department-wise Faculty Structure
+Department of Computer Science & Engineering
+HOD: Dr. P. Prasanna Murali Krishna
+Professors, Associate Professors, and Assistant Professors specializing in:
+Artificial Intelligence & Machine Learning
+Data Science
+Network Security
+Cloud Computing
+IoT
+Department of Electronics & Communication Engineering
+Specializations include:
+VLSI Design
+Embedded Systems
+Signal Processing
+Communication Systems
+Department of Electrical & Electronics Engineering
+Focus areas:
+Power Systems
+Power Electronics
+Control Systems
+Electrical Machines
+Department of Mechanical Engineering
+Core areas:
+Thermal Engineering
+Design Engineering
+Production Engineering
+Industrial Engineering
+Department of Civil Engineering
+Specializations in:
+Structural Engineering
+Environmental Engineering
+Transportation Engineering
+Geotechnical Engineering
+Department of Basic Sciences & Humanities
+Subjects covered:
+Mathematics
+Physics
+Chemistry
+English
+Professional Communication
+Faculty Qualifications
+Most faculty members hold Ph.D. or M.Tech degrees
+Many have industrial experience
+Regular participation in faculty development programs
+Active in research and publications
+Research & Development
+Faculty involved in funded research projects
+Regular publication of research papers
+Industry collaborations
+Guidance for student projects
+Faculty Achievements
+Patents
+Research publications
+Book publications
+Conference presentations
+Industry certifications
+Note: For specific faculty member details and current positions, please contact the institution directly or visit the campus.
+
+
+# Vasireddy Venkatadri Institute of Technology (VVIT)
+
+## Introduction and Overview
+
+Vasireddy Venkatadri Institute of Technology, commonly known as VVIT, is a distinguished engineering institution located in the heart of Andhra Pradesh. Established in 2007 by Er. Vasireddy Vidya Sagar under the Social Educational Trust, VVIT has rapidly grown to become a cornerstone of technical education in the region. The college is strategically situated between Guntur and Vijayawada in the capital region of Amravati, making it easily accessible to students from various parts of the state.
+
+VVIT is a co-educational institution, welcoming both male and female students to pursue their dreams in the field of engineering. The college primarily offers B.Tech programs, living up to its reputation as a focused engineering institute. With an affordable fee structure ranging from INR 20,000 to 30,000 per year, VVIT strives to make quality education accessible to a wide range of aspiring engineers.
+
+## Academic Programs
+
+VVIT began its journey with an initial intake of 240 students across four B.Tech programs. Over the years, it has expanded its offerings significantly. Today, the institute boasts an impressive annual intake capacity of 1260 students for B.Tech programs and 81 students for M.Tech programs. The college currently serves a vibrant community of nearly 4000 students, supported by 345 dedicated teaching staff and 225 non-teaching staff members.
+
+The B.Tech programs offered at VVIT include:
+1. Computer Science and Engineering
+2. Information Technology
+3. Electronics and Communication Engineering
+4. Electrical Engineering
+5. Mechanical Engineering
+6. Civil Engineering
+
+In addition to these core branches, VVIT has also introduced specialized B.Tech programs in emerging fields such as:
+7. Computer Science and Management (CSM)
+8. Artificial Intelligence and Machine Learning (AIM)
+9. Computer Science and Operations (CSO)
+10. Cyber Intelligence and Cyber Security (CIC)
+11. Artificial Intelligence and Data Science (AID)
+
+At the postgraduate level, VVIT offers M.Tech programs in:
+1. Computer Science and Engineering (CSE)
+2. VLSI & Embedded Systems (VLSI&ES)
+3. Power Electronics and Electric Drives (PEED)
+4. Machine Design (MD)
+5. Structural Engineering (SE)
+
+## Infrastructure and Facilities
+
+VVIT takes pride in its state-of-the-art infrastructure designed to provide students with a conducive learning environment. The campus houses:
+
+1. A well-equipped library that serves as a knowledge hub for students and faculty
+2. Modern science laboratories for practical learning and experiments
+3. Advanced computer labs to keep pace with rapidly evolving technology
+4. Diverse sports facilities to encourage physical fitness and team spirit
+5. A spacious canteen catering to the dietary needs of the VVIT community
+6. Comfortable hostel accommodations for outstation students
+
+These facilities not only support academic pursuits but also contribute to the overall development of students, aligning with VVIT's mission of providing holistic education.
+
+## Research and Innovation
+
+VVIT has established itself as a center for research and innovation. The institute has successfully completed 10 centrally funded research projects and currently has 6 ongoing DST projects. As a testament to its research prowess, VVIT has published 13 patents, authored 16 books, and contributed nearly 690 papers to various journals. The college also houses a 'Research Centre' affiliated to JNTUK, further solidifying its commitment to advanced studies and research.
+
+## Industry Collaborations and Placements
+
+Understanding the importance of industry-academia partnerships, VVIT has forged strong relationships with leading companies. The institute has signed MOUs with prominent organizations such as Infosys, Tech Mahindra, SocialAgro, Efftronics, EPAM, Virtusa, CTS, AMCAT, and Cocubes. These collaborations enhance students' exposure to industry practices and improve their employability.
+
+A significant milestone in VVIT's industry collaboration efforts was the establishment of the Centre of Excellence (CoE) by Siemens India in 2016. This initiative, set up in partnership with APSSDC, aims to strengthen the industry-institute interface and enhance students' employability skills.
+
+While specific placement rates may vary, VVIT maintains an active placement cell that assists students with internships and job placements. The college also boasts a strong alumni network, with many graduates enjoying successful careers across various industries.
+
+## Student Life and Extra-Curricular Activities
+
+VVIT believes in the holistic development of its students. The college organizes various sports and cultural events throughout the academic year, providing ample opportunities for socialization and skill development. These activities not only offer a break from academic rigors but also help students develop important soft skills such as teamwork, leadership, and time management.
+
+## Department Focus: CSE - Artificial Intelligence and Machine Learning
+
+A highlight of VVIT's forward-thinking approach is its Department of CSE - Artificial Intelligence and Machine Learning, established in 2020. With an intake of 240 students, this department exemplifies VVIT's commitment to staying at the forefront of technological education.
+
+The department has cultivated strong industry ties, including collaborations with Google CodeLabs, Infosys (Campus Connect), Microsoft (Campus Agreement), TechMahindra, SphereMe, InetSolv & V-Technologies. It regularly organizes symposia, exhibitions, conferences, seminars, and workshops, benefiting not only its own students but also those from other institutions and industry professionals.
+
+## Vision and Mission
+
+VVIT's vision is to impart quality education through exploration and experimentation, aiming to generate socially conscious engineers with strong ethics and values, who can contribute to the advancement of science and technology.
+
+The institute's mission encompasses:
+1. Educating students with a practical approach aligned with industry needs
+2. Maintaining proactive and professional management with passionate teaching faculty
+3. Providing holistic and integrated education for overall student development
+4. Competing with the best to become the most preferred institution for serious learners
+5. Forging strong relationships with industry
+
+Through these endeavors, VVIT continues to shape the future of engineering education in India, producing graduates who are not just technically proficient but also socially responsible and ethically grounded.
+
+## Canteen
+
+VVIT takes pride in having one of the best and most experienced teams that ensures healthy food is prepared and served in a hygienic environment.
+Our aesthetically designed canteen is a top destination for dining on campus.
+
+Timings
+
+Breakfast: 8:00 AM to 10:30 AM
+Lunch: 12:00 PM to 2:00 PM
+
+Menu
+
+Breakfast: Idly, Vada, Chapathi, Rice Pongal, Mysore Bajji, Upma, served with Chutney and Sambar
+Lunch: A special item like Bajji, Sweet, Tomato Rice, Pulihora, Curd Rice, Fried Rice, Spiced Rice, and Seasonal fruits, along with White Rice, Dal, Vegetable Fry, Vegetable Curry, Sambar, Vegetable Chutney or Pickle, and Curd
+
+Charges:
+
+Breakfast: Rs. 25 per item (Idly - 4, Vada - 3, Chapathi - 1, Upma or Rice Pongal - 2 scoops)
+Lunch: Rs. 55 per day, Monthly card at Rs. 34 per working day
+Tea: Rs. 5
+
+## Hostels
+
+The college offers separate hostel facilities with an integrated mess for both boys and girls.
+
+Girls Hostel
+Location: Within the college campus (no transport costs)
+Capacity: Well-lit, ventilated rooms with four beds, attached bathrooms, and ample study space
+Mess: Dedicated mess serving healthy and hygienic food
+Fee: Rs. 95,000/- (for the academic year 2024-25)
+Security: 24-hour vigilant security with closed-circuit cameras
+Entertainment: Games, TV programs, and movies
+Additional charges: Dhobi charges extra
+
+Boys Hostel
+Location: Near Kaza Toll Plaza
+Capacity: Well-lit, ventilated 25 flats with 10 beds, attached bathrooms, and ample study space
+Mess: Dedicated mess serving healthy and hygienic food
+Fee: Rs. 95,000/- (for the academic year 2024-25, including transport)
+Security: 24-hour vigilant security services
+Transport: Bus service between hostel and college (morning and evening)
+Additional charges: Dhobi charges extra
+
+## Labs
+
+CSE Department Overview
+Classrooms: 13
+Departmental Labs: 6
+Seminar Hall: 1
+Staff Rooms: 3
+Lab Facilities
+Database/Software Development Lab (LAB-1)
+
+72 Computers (Intel i7, 16 GB RAM, 512 GB HDD)
+Software: Windows 10, Ubuntu 16.04, MS Office, Java, Python, Hadoop, R Studio, MySQL, etc.
+OOP/M.Tech/R&D Lab (LAB-2)
+
+70 Computers (Intel i5, 8 GB RAM, 500 GB HDD)
+Software: Windows 10, Ubuntu 16.04, Java, Python, Hadoop, etc.
+Data Structures/System Programming Lab (LAB-3)
+
+72 Computers (Intel i7, 16 GB RAM, 512 GB HDD)
+Software: Windows 10, Ubuntu 16.04, Java, Python, MySQL, etc.
+Mobile App Dev/Network Lab (LAB-4)
+
+70 Computers (Intel i3, 8 GB RAM, 500 GB HDD)
+Software: Windows 10, Ubuntu 16.04, Java, Python, Hadoop, etc.
+Google CodeLabs (LAB-5)
+
+60 Workstations (Intel i7, 16 GB RAM, 1 TB HDD)
+Software: Windows 10, Ubuntu 16.04, Java, Python, Hadoop, etc.
+AI/DL Embedded Lab (LAB-6)
+
+Jetson Nano kits, camera, wireless NIC, etc.
+Software: TensorFlow, PyTorch, Keras, Caffe, MXNet, etc.
+ECE Department Laboratories
+UG Labs: Electronic Devices, Circuit Analysis, Communication Labs, Pulse and Digital Circuits, DSP & Simulation, Microprocessors & Microcontrollers, Microwave & Optical Communications
+PG/R&D Labs: VLSI, Embedded Systems, IoT, and Research Center
+Total Area: 970 sq. m.
+Total Equipment Cost: Rs. 1,37,65,832/-
+
+## Transport
+
+VVIT operates a fleet of 67 buses to provide a smooth glitch less transportation for the students and staff from every important place in Guntur, Vijayawada, Mangalagiri, Tenali, Ponnur, Amaravathi, Tadikonda, Kantheru, Perecherla, Nuthakki, Pedhanandhipadu, Narasaraopet, Sattenapalle, Tulluru and Gannavaram
+
+##Library
+
+Central Library
+
+The college has a computerized library well equipped with a large collection of books under the categories of academics, reference and general.  All the books are bar-coded and indexed using the latest library management software.  The library also subscribes to both national and international magazines, journals and periodicals in addition to leading national dailies.
+
+It is a book house of knowledge, where its prime motto is to guide every student in an appropriate way and pave the road to success. It meets the innumerable needs of the students in the academic curriculum. It satiates the intellectual hunger and quenches the thirst for knowledge of the scholarly students.  The book collection ranges from literary classics to management guide and from career counselors to technical reviews.
+
+
+Digital Library
+
+Digital Library has 36 Computer Systems with High Speed Internet and backup
+NPTEL E-Lectures and Videos
+DELNET
+IEEE Society Periodicals, ASME and ASCE
+National Digital Library of India (NDLI)
+Open Access Journals/Dissertations/Archives/Database contents available at library portal
+
+
+
+## Key persons
+
+Sri. V. Vidya Sagar is the Chairman. Contact: Email: vvidyasagar@yahoo.com
+Sri. S. Badri Prasad is the Secretary. Contact: Email: prasadbadari@hotmail.com
+Sri. M. Sree Krishna is the Joint Secretary (Academics). Contact: Email: krishna@vvit.net
+Dr. Y. Mallikarjuna Reddy is the Principal. Contact: Phone: 9949359336, Email: principal@vvit.net
+Dr. P. Nageswara Rao is the Director. Contact: Email: director@vvit.net
+Dr. R. Naveen is the Director of SIEMENS COE. Contact: Phone: 9440311088, Email: naveen@vvit.net
+Dr. N. Kumarswamy is the Dean of Administration. Contact: Phone: 9490386288, Email: kumarswamy@vvit.net
+Dr. K. Giribabu is the Dean of Academics. Contact: Phone: 9885263148, Email: kgiribabu@vvit.net
+Dr. M. V. Raghu Ram is the Dean of Freshman and Placements. Contact: Phone: 8500450220, Email: mv.raghuram@vvit.net
+Dr. T. Sreedhar Babu is the Head of Civil Department. Contact: Phone: 9490772244, Email: sreedharbabu@vvit.net
+Dr. K. Satyanarayana is the Head of Mechanical Engineering Department. Contact: Phone: 9440484851, Email: satyam918@gmail.com
+Dr. M. Yaswanth Bhanumurthy is the Head of ECE Department. Contact: Phone: 9704135453, Email: mybhanu@vvit.net
+Dr. V. Ram Chandran Bhatt is the Head of CSE Department. Contact: Phone: 9441410285, Email: vrc.bhatt@gmail.com
+Dr. A. V. Naresh Babu is the Head of EEE Department. Contact: Phone: 9849509478, Email: avnareshbabu@vvit.net
+Dr. A. Kalavathi is the Head of IT Department. Contact: Phone: 9440201567, Email: kalavathi_alla@vvit.net
+Sri. J. Koteswara Sarma is the Administrative Officer (AO). Contact: Phone: 9866384336, Email: jksarma@vvit.net
+Dr. P. Ammireddy is the Controller of Examinations. Contact: Phone: 9848068948, Email: vvitcoe@vvit.net
+Mr. N. Siva Rama Krishna is the Deputy Controller of Examinations. Contact: Phone: 9849048992, Email: vvitdce@vvit.net
+Sri. K. Suresh Babu is the Training Officer for CSE. Contact: Phone: 9866179668, Email: kollurusuresh@vvit.net
+The Placement Office can be contacted via Email: tpo@vvit.net
+Dr. K. V. L Somasekhar is responsible for the Entrepreneurship Development (ED) Cell. Contact: Phone: 8297948223, Email: kvl@vvit.net
+
+
+## VVIT Student Activity Council (SAC)
+
+The VVIT Student Activity Council (SAC) is the official student body representing the students to management, administration, and faculty. SAC oversees key areas like student welfare, club activities, academics, transportation, hostel and mess facilities, sports, infrastructure, and discipline.
+
+Mission and Vision: SAC represents students' needs and aspirations, helping them achieve their goals. It aims to create future leaders who can positively impact the community.
+
+SAC Structure:
+
+Central Working Committee (CWC): Governs SAC, forming policies and managing club structures. Key members include the President, Vice President, General Secretary, and selected members.
+Executive Body: Executes CWC's decisions, manages events, projects, and coordinates club activities.
+General Body: Comprises all VVIT students, who participate in SAC activities and provide feedback.
+Key Roles:
+
+President: Leads SAC, represents it at events, and is responsible for key decisions.
+Vice President: Oversees committees, stands in for the President, and proposes new committees when necessary.
+General Secretary: Manages documentation, sets meeting agendas, and coordinates with clubs.
+Core Values:
+
+Focused on students' needs.
+Promotes honesty, integrity, and inclusivity.
+Encourages leadership, feedback, and continuous improvement.
+What SAC Offers: SAC provides opportunities for leadership, skill development, and student-driven initiatives. It serves as a platform for students to implement their ideas, develop transferable skills, and work towards personal and academic growth.

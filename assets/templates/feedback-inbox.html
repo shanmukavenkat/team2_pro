@@ -1,0 +1,344 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>CHATBOT</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon.png">
+    <link rel="stylesheet" href="{% static 'vendor/owl-carousel/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'vendor/owl-carousel/css/owl.theme.default.min.css' %}">
+    <link href="{% static 'vendor/jqvmap/css/jqvmap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+
+
+</head>
+
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+        <div class="sk-three-bounce">
+            <div class="sk-child sk-bounce1"></div>
+            <div class="sk-child sk-bounce2"></div>
+            <div class="sk-child sk-bounce3"></div>
+        </div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+        <!--**********************************
+            Nav header start
+        ***********************************-->
+        <div class="nav-header">
+            <a href="index.html" class="brand-logo">
+           <h3 style="color: aliceblue;">&nbsp;AP&nbsp;</h3>
+           <h6 style="color: aliceblue; padding-top: 2px;">College Guide</h6>
+            </a>
+
+            <div class="nav-control">
+                <div class="hamburger">
+                    <span class="line"></span><span class="line"></span><span class="line"></span>
+                </div>
+            </div>
+        </div>
+        <!--**********************************
+            Nav header end
+        ***********************************-->
+
+        <!--**********************************
+            Header start
+        ***********************************-->
+        <div class="header">
+            <div class="header-content">
+                <nav class="navbar navbar-expand">
+                    <div class="collapse navbar-collapse justify-content-between">
+                        <div class="header-left">
+    <div class="search_bar dropdown" id="searchBar" style="display: none;">
+        <span class="search_icon p-3 c-pointer" data-toggle="dropdown">
+            <i class="mdi mdi-magnify"></i>
+        </span>
+        <div class="dropdown-menu p-0 m-0">
+            <form>
+                <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+// Function to toggle the visibility of the search bar
+function toggleSearchBar() {
+    const searchBar = document.getElementById('searchBar');
+    if (searchBar.style.display === 'none') {
+        searchBar.style.display = 'block';
+    } else {
+        searchBar.style.display = 'none';
+    }
+}
+
+// Call toggleSearchBar() when needed to show/hide the search bar
+// Example: show the search bar after a delay or on button click
+</script>
+
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+
+        <!--**********************************
+            Sidebar start
+        ***********************************-->
+        <div class="quixnav">
+            <div class="quixnav-scroll">
+                <ul class="metismenu" id="menu" style="padding-top: 15px;">
+                    <li><a href="{% url 'index' %}"><i class="icon icon-single-04"></i><span class="nav-text">Dashboard</span></a></li>
+        
+                    <li class="nav-label first">Job Predication</li>
+                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="icon icon-single-04"></i><span class="nav-text">Features</span></a>
+                        <ul aria-expanded="false">
+                            <li><a href="{% url 'features' %}">Job Predication</a></li>
+                            <li><a href="{% url 'new_features' %}">Job Details</a></li>
+                        </ul>
+                    </li>
+        
+                    <li class="nav-label">Apps</li>
+                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="icon icon-app-store"></i><span class="nav-text">Apps</span></a>
+                        <ul aria-expanded="false">
+                            <li><a href="{% url 'profile' %}">Profile</a></li>
+                            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">FeedBack Analytics</a>
+                                <ul aria-expanded="false">
+                                    <li><a href="{% url 'feedback' %}">Feedback</a></li>
+                                    <li><a href="{% url 'feedback_graph' %}">Feedback Graph</a></li>
+                                </ul>
+                            </li>
+                            
+                        </ul>
+                    </li>
+        
+                    <li class="nav-label">CHATBOT</li>
+                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="icon icon-single-copy-06"></i><span class="nav-text">VVIT</span></a>
+                        <ul aria-expanded="false">
+                            <li><a href="{% url 'chatbot' %}">ChatBot</a></li>
+                            <li><a href="{% url 'information' %}">Information</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+        <!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body">
+            <div class="container-fluid">
+                <div class="row page-titles mx-0">
+                    <div class="col-sm-6 p-md-0">
+                        <div class="welcome-text">
+                            <h4>Hi, welcome back!</h4>
+                            <span class="ml-1">Email</span>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="javascript:void(0)">Email</a></li>
+                            <li class="breadcrumb-item active"><a href="javascript:void(0)">Inbox</a></li>
+                        </ol>
+                    </div>
+                </div>
+                <!-- row -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="contact">
+                                <div class="container">
+                                    <div class="row">
+                                       
+                        
+                            <!-- Contact Content -->
+<div class="col-lg-6 col-md-8 col-12 mx-auto">
+    <div class="contact_form_container">
+      <div class="contact_form_title text-center mb-4">Feedback</div>
+      <form method="post" onsubmit="return validateForm()" id="feedbackForm">
+        {% csrf_token %}
+        <div class="row g-3 justify-content-center">
+          
+          <!-- Rating Section -->
+          <div class="col-12">
+            <div class="rating text-center">
+              <input type="radio" name="rating" value="5" id="5">
+              <label for="5">☆</label>
+              <input type="radio" name="rating" value="4" id="4">
+              <label for="4">☆</label>
+              <input type="radio" name="rating" value="3" id="3">
+              <label for="3">☆</label>
+              <input type="radio" name="rating" value="2" id="2">
+              <label for="2">☆</label>
+              <input type="radio" name="rating" value="1" id="1">
+              <label for="1">☆</label>
+              <div id="ratingError" class="text-danger" style="display: none;">Please select a rating.</div>
+            </div>
+          </div>
+          
+          <!-- Review Section -->
+          <div class="col-12">
+            <div class="form-group">
+              <textarea class="form-control" placeholder="Type your comments..." name="review" id="review" rows="5"></textarea>
+              <div id="reviewError" class="text-danger" style="display: none;">Please enter your comments.</div>
+            </div>
+          </div>
+          
+          <!-- Submit Button -->
+          <div class="col-12 text-center mt-4">
+            <button class="btn btn-primary" type="submit">Submit</button>
+          </div>
+  
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  <!-- CSS -->
+  <style>
+    .rating {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+  
+    .rating > input {
+      display: none;
+    }
+  
+    .rating > label {
+      width: 40px;
+      font-size: 2.5rem;
+      color: transparent;
+      cursor: pointer;
+      transition: transform 0.3s ease, color 0.3s ease;
+      background: linear-gradient(45deg, #FFD600, #FFA500);
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+  
+    .rating > label::before {
+      content: "\2605";
+      position: absolute;
+      opacity: 0;
+    }
+  
+    .rating > label:hover,
+    .rating > label:hover ~ label,
+    .rating > input:checked ~ label {
+      color: #FFD600;
+      transform: scale(1.2);
+    }
+  
+    .rating > label:hover::before,
+    .rating > label:hover ~ label::before,
+    .rating > input:checked ~ label::before {
+      opacity: 1 !important;
+    }
+  
+    .rating:hover > input:checked ~ label:before {
+      opacity: 0.4;
+    }
+  
+    /* Adjustments for smaller screens */
+    @media (max-width: 576px) {
+      .rating > label {
+        font-size: 2rem;
+      }
+    }
+  </style>
+  
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!--**********************************
+            Content body end
+        ***********************************-->
+
+
+        <!--**********************************
+            Footer start
+        ***********************************-->
+      
+        <!--**********************************
+            Footer end
+        ***********************************-->
+
+        <!--**********************************
+           Support ticket button start
+        ***********************************-->
+
+        <!--**********************************
+           Support ticket button end
+        ***********************************-->
+
+        
+    </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <!-- Required vendors -->
+    <script src="{% static 'vendor/global/global.min.js' %}"></script>
+    <script src="{% static 'js/quixnav-init.js' %}" ></script>
+    <script src="{% static 'js/custom.min.js' %}" ></script>
+
+
+    <!-- Vectormap -->
+    <script src="{% static 'vendor/raphael/raphael.min.js' %}"></script>
+    <script src="{% static 'vendor/morris/morris.min.js' %}"></script>
+
+
+    <script src="{% static 'vendor/circle-progress/circle-progress.min.js' %}"></script>
+    <script src="{% static 'vendor/chart.js/Chart.bundle.min.js' %}"></script>
+
+    <script src="{% static 'vendor/gaugeJS/dist/gauge.min.js' %}"></script>
+
+    <!--  flot-chart js -->
+    <script src="{% static 'vendor/flot/jquery.flot.js' %}"></script>
+    <script src="{% static 'vendor/flot/jquery.flot.resize.js' %}"></script>
+
+    <!-- Owl Carousel -->
+    <script src="{% static 'vendor/owl-carousel/js/owl.carousel.min.js' %}"></script>
+
+    <!-- Counter Up -->
+    <script src="{% static 'vendor/jqvmap/js/jquery.vmap.min.js' %}"></script>
+    <script src="{% static 'vendor/jqvmap/js/jquery.vmap.usa.js' %}"></script>
+    <script src="{% static 'vendor/jquery.counterup/jquery.counterup.min.js' %}"></script>
+
+
+    <script src="{% static 'js/dashboard/dashboard-1.js' %}"></script>
+
+</body>
+
+</html>

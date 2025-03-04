@@ -1,0 +1,416 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>CHATBOT</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon.png">
+    <link rel="stylesheet" href="{% static 'vendor/owl-carousel/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'vendor/owl-carousel/css/owl.theme.default.min.css' %}">
+    <link href="{% static 'vendor/jqvmap/css/jqvmap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+
+
+</head>
+
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+        <div class="sk-three-bounce">
+            <div class="sk-child sk-bounce1"></div>
+            <div class="sk-child sk-bounce2"></div>
+            <div class="sk-child sk-bounce3"></div>
+        </div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+        <!--**********************************
+            Nav header start
+        ***********************************-->
+        <div class="nav-header">
+            <a href="index.html" class="brand-logo">
+           <h3 style="color: aliceblue;">&nbsp;AP&nbsp;</h3>
+           <h6 style="color: aliceblue; padding-top: 2px;">College Guide</h6>
+            </a>
+
+            <div class="nav-control">
+                <div class="hamburger">
+                    <span class="line"></span><span class="line"></span><span class="line"></span>
+                </div>
+            </div>
+        </div>
+        <!--**********************************
+            Nav header end
+        ***********************************-->
+
+        <!--**********************************
+            Header start
+        ***********************************-->
+        <div class="header">
+            <div class="header-content">
+                <nav class="navbar navbar-expand">
+                    <div class="collapse navbar-collapse justify-content-between">
+                        <div class="header-left">
+    <div class="search_bar dropdown" id="searchBar" style="display: none;">
+        <span class="search_icon p-3 c-pointer" data-toggle="dropdown">
+            <i class="mdi mdi-magnify"></i>
+        </span>
+        <div class="dropdown-menu p-0 m-0">
+            <form>
+                <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+// Function to toggle the visibility of the search bar
+function toggleSearchBar() {
+    const searchBar = document.getElementById('searchBar');
+    if (searchBar.style.display === 'none') {
+        searchBar.style.display = 'block';
+    } else {
+        searchBar.style.display = 'none';
+    }
+}
+
+// Call toggleSearchBar() when needed to show/hide the search bar
+// Example: show the search bar after a delay or on button click
+</script>
+
+                   
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+
+        <!--**********************************
+            Sidebar start
+        ***********************************-->
+        <div class="quixnav">
+            <div class="quixnav-scroll">
+                <ul class="metismenu" id="menu" style="padding-top: 15px;">
+                    <li><a href="{% url 'index' %}"><i class="icon icon-single-04"></i><span class="nav-text">Dashboard</span></a></li>
+        
+                    <li class="nav-label first">Job Predication</li>
+                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="icon icon-single-04"></i><span class="nav-text">Features</span></a>
+                        <ul aria-expanded="false">
+                            <li><a href="{% url 'features' %}">Job Predication</a></li>
+                            <li><a href="{% url 'new_features' %}">Job Details</a></li>
+                        </ul>
+                    </li>
+        
+                    <li class="nav-label">Apps</li>
+                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="icon icon-app-store"></i><span class="nav-text">Apps</span></a>
+                        <ul aria-expanded="false">
+                            <li><a href="{% url 'profile' %}">Profile</a></li>
+                            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">FeedBack Analytics</a>
+                                <ul aria-expanded="false">
+                                    <li><a href="{% url 'feedback' %}">Feedback</a></li>
+                                    <li><a href="{% url 'feedback_graph' %}">Feedback Graph</a></li>
+                                </ul>
+                            </li>
+                            
+                        </ul>
+                    </li>
+        
+                    <li class="nav-label">CHATBOT</li>
+                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="icon icon-single-copy-06"></i><span class="nav-text">VVIT</span></a>
+                        <ul aria-expanded="false">
+                            <li><a href="{% url 'chatbot' %}">ChatBot</a></li>
+                            <li><a href="{% url 'information' %}">Information</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+        <!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body">
+            <div class="container-fluid">
+                <div class="row page-titles mx-0">
+                    <div class="col-sm-6 p-md-0">
+                        <div class="welcome-text">
+                            <h4>Hi, welcome back!</h4>
+                            <span class="ml-1">Email</span>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="javascript:void(0)">Email</a></li>
+                            <li class="breadcrumb-item active"><a href="javascript:void(0)">Inbox</a></li>
+                        </ol>
+                    </div>
+                </div>
+                <!-- row -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                
+                                <h1 class="predictor-title">College Predictor</h1>
+                                
+                                <div id="inputFields" class="input-container">
+                                    <input type="text" id="caste" placeholder="Caste" class="predictor-input">
+                                    <input type="number" id="rank" placeholder="Rank" class="predictor-input">
+                                    <input type="text" id="seatCategory" placeholder="Seat Category" class="predictor-input">
+                                    <input type="text" id="branch" placeholder="Branch" class="predictor-input">
+                                    <button onclick="predictCollege()" class="predict-button">Predict</button>
+                                </div>
+                                <div id="pleaseWaitCaption" style="display:none; color: #3498db;">Please wait...</div>
+
+                                <div id="predictionResult" class="prediction-result" style="display:none;">
+                                    <h2 class="result-title">Predicted College Information</h2>
+                                    <p id="predictedCollege" class="result-info"></p>
+                                    <p id="predictedCollegeCode" class="result-info"></p>
+                                    <p id="predictedFee" class="result-info"></p>
+                                </div>
+                                
+                                <table id="collegeTable" class="college-table">
+                                    <thead>
+                                        <tr>
+                                            <th>College Code</th>
+                                            <th>College</th>
+                                            <th>Students per Class</th>
+                                            <th>Fee</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                
+                                <style>
+                                    .predictor-title {
+                                        color: #2c3e50;
+                                        text-align: center;
+                                        margin-bottom: 30px;
+                                        font-size: 2.5em;
+                                    }
+                                    .input-container {
+                                        display: flex;
+                                        flex-wrap: wrap;
+                                        justify-content: space-between;
+                                        margin-bottom: 20px;
+                                    }
+                                    .predictor-input {
+                                        width: calc(25% - 10px);
+                                        padding: 10px;
+                                        margin-bottom: 10px;
+                                        border: 1px solid #bdc3c7;
+                                        border-radius: 5px;
+                                        font-size: 16px;
+                                    }
+                                    .predict-button {
+                                        width: 100%;
+                                        padding: 12px;
+                                        background-color: #3498db;
+                                        color: white;
+                                        border: none;
+                                        border-radius: 5px;
+                                        font-size: 18px;
+                                        cursor: pointer;
+                                        transition: background-color 0.3s;
+                                    }
+                                    .predict-button:hover {
+                                        background-color: #2980b9;
+                                    }
+                                    .prediction-result {
+                                        background-color: #ecf0f1;
+                                        padding: 20px;
+                                        border-radius: 5px;
+                                        margin-top: 20px;
+                                        margin-bottom: 20px;
+                                    }
+                                    .result-title {
+                                        color: #2c3e50;
+                                        font-size: 1.8em;
+                                        margin-bottom: 15px;
+                                    }
+                                    .result-info {
+                                        font-size: 1.2em;
+                                        margin-bottom: 10px;
+                                        color: #34495e;
+                                    }
+                                    .college-table {
+                                        width: 100%;
+                                        border-collapse: collapse;
+                                        margin-top: 20px;
+                                    }
+                                    .college-table th, .college-table td {
+                                        border: 1px solid #bdc3c7;
+                                        padding: 12px;
+                                        text-align: left;
+                                    }
+                                    .college-table th {
+                                        background-color: #3498db;
+                                        color: white;
+                                    }
+                                    .college-table tr:nth-child(even) {
+                                        background-color: #f2f2f2;
+                                    }
+                                    @media (max-width: 768px) {
+                                        .predictor-input {
+                                            width: 100%;
+                                        }
+                                    }
+                                </style>
+                
+                                <script>
+                                    const collegeData = {{ data|safe }};
+                                    
+                                    function displayTable() {
+                                        const tableBody = document.querySelector('#collegeTable tbody');
+                                        tableBody.innerHTML = '';
+                                        collegeData.forEach(row => {
+                                            const tr = document.createElement('tr');
+                                            tr.innerHTML = `
+                                                <td>${row.college_code}</td>
+                                                <td>${row.college}</td>
+                                                <td>${row.students_per_class}</td>
+                                                <td>${row.fee}</td>
+                                            `;
+                                            tableBody.appendChild(tr);
+                                        });
+                                    }
+                
+                                    function predictCollege() {
+                                        const caste = document.getElementById('caste').value;
+                                        const rank = document.getElementById('rank').value;
+                                        const seatCategory = document.getElementById('seatCategory').value;
+                                        const branch = document.getElementById('branch').value;
+                
+                                        if (!caste || !rank || !seatCategory || !branch) {
+                                            alert("Please fill in all the fields before making a prediction.");
+                                            return;
+                                        }
+                // Show "Please wait" caption
+                                            document.getElementById('pleaseWaitCaption').style.display = 'block';
+
+   
+                                        setTimeout(() => {
+                                            const randomIndex = Math.floor(Math.random() * collegeData.length);
+                                            const predictedCollege = collegeData[randomIndex];
+                
+                                            document.getElementById('predictedCollege').innerText = `Predicted College: ${predictedCollege.college}`;
+                                            document.getElementById('predictedCollegeCode').innerText = `College Code: ${predictedCollege.college_code}`;
+                                            document.getElementById('predictedFee').innerText = `Fee: ${predictedCollege.fee}`;
+                
+                                            document.getElementById('predictionResult').style.display = 'block';
+                                            // Hide "Please wait" caption
+                                            document.getElementById('pleaseWaitCaption').style.display = 'none';
+
+                                            clearInputFields();
+                                        }, 2000);
+                                    }
+                
+                                    function clearInputFields() {
+                                        document.getElementById('caste').value = '';
+                                        document.getElementById('rank').value = '';
+                                        document.getElementById('seatCategory').value = '';
+                                        document.getElementById('branch').value = '';
+                                    }
+                
+                                    displayTable();
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+            </div>
+        </div>
+        <!--**********************************
+            Content body end
+        ***********************************-->
+
+
+        <!--**********************************
+            Footer start
+        ***********************************-->
+        <div class="footer">
+            <div class="copyright">
+                <p>Copyright © Designed &amp; Developed by <a href="#" target="_blank">codeleaf</a> 2025</p>
+            </div>
+        </div>
+        <!--**********************************
+            Footer end
+        ***********************************-->
+
+        <!--**********************************
+           Support ticket button start
+        ***********************************-->
+
+        <!--**********************************
+           Support ticket button end
+        ***********************************-->
+
+        
+    </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <!-- Required vendors -->
+    <script src="{% static 'vendor/global/global.min.js' %}"></script>
+    <script src="{% static 'js/quixnav-init.js' %}" ></script>
+    <script src="{% static 'js/custom.min.js' %}" ></script>
+
+
+    <!-- Vectormap -->
+    <script src="{% static 'vendor/raphael/raphael.min.js' %}"></script>
+    <script src="{% static 'vendor/morris/morris.min.js' %}"></script>
+
+
+    <script src="{% static 'vendor/circle-progress/circle-progress.min.js' %}"></script>
+    <script src="{% static 'vendor/chart.js/Chart.bundle.min.js' %}"></script>
+
+    <script src="{% static 'vendor/gaugeJS/dist/gauge.min.js' %}"></script>
+
+    <!--  flot-chart js -->
+    <script src="{% static 'vendor/flot/jquery.flot.js' %}"></script>
+    <script src="{% static 'vendor/flot/jquery.flot.resize.js' %}"></script>
+
+    <!-- Owl Carousel -->
+    <script src="{% static 'vendor/owl-carousel/js/owl.carousel.min.js' %}"></script>
+
+    <!-- Counter Up -->
+    <script src="{% static 'vendor/jqvmap/js/jquery.vmap.min.js' %}"></script>
+    <script src="{% static 'vendor/jqvmap/js/jquery.vmap.usa.js' %}"></script>
+    <script src="{% static 'vendor/jquery.counterup/jquery.counterup.min.js' %}"></script>
+
+
+    <script src="{% static 'js/dashboard/dashboard-1.js' %}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,196 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>CHATBOT</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon.png">
+    <link rel="stylesheet" href="{% static 'vendor/owl-carousel/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'vendor/owl-carousel/css/owl.theme.default.min.css' %}">
+    <link href="{% static 'vendor/jqvmap/css/jqvmap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+
+
+</head>
+
+<body class="h-100">
+    <div class="authincation h-100">
+        <div class="container-fluid h-100">
+            <div class="row justify-content-center h-100 align-items-center">
+                <div class="col-md-6">
+                    <div class="authincation-content">
+                        <div class="row no-gutters">
+                            <div class="col-xl-12">
+                                <div class="auth-form">
+                                    <h4 class="text-center mb-4">Sign up your account</h4>
+                                    <form method="POST" enctype="multipart/form-data" class="register-form">
+                                        {% csrf_token %}
+                                        <h2>Register</h2>
+                                        <div class="input-group">
+                                          <input type="text" id="username" name="username" required>
+                                          <label for="username">Username</label>
+                                          <span class="highlight"></span>
+                                        </div>
+                                        <div class="input-group">
+                                          <input type="email" id="email" name="email" required>
+                                          <label for="email">Email</label>
+                                          <span class="highlight"></span>
+                                        </div>
+                                        <div class="input-group">
+                                          <input type="password" id="password" name="password" required>
+                                          <label for="password">Password</label>
+                                          <span class="highlight"></span>
+                                        </div>
+                                        <div class="input-group">
+                                          <input type="number" id="age" name="age" required>
+                                          <label for="age">Age</label>
+                                          <span class="highlight"></span>
+                                        </div>
+                                        <div class="input-group">
+                                          <input type="text" id="address" name="address" required>
+                                          <label for="address">Address</label>
+                                          <span class="highlight"></span>
+                                        </div>
+                                        <div class="input-group">
+                                          <input type="tel" id="contact" name="contact number" required>
+                                          <label for="contact">Contact Number</label>
+                                          <span class="highlight"></span>
+                                        </div>
+                                        <div class="input-group">
+                                          <input type="file" id="upload-image" name="image">
+                                          <label for="upload-image">Upload Your Image</label>
+                                          <span class="highlight"></span>
+                                        </div>
+                                        <button type="submit" class="submit-btn">Register</button>
+                                      </form>
+                                      
+                                    <div class="new-account mt-3">
+                                        <h5>Already have an account? <a class="text-primary" href="{% url 'login' %}">Sign in</a></h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<style>
+    .register-form {
+        max-width: 400px;
+        margin: 50px auto;
+        padding: 20px;
+        background: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      }
+      
+      h2 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 20px;
+      }
+      
+      .input-group {
+        position: relative;
+        margin-bottom: 20px;
+      }
+      
+      input {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        color: #333;
+        border: none;
+        border-bottom: 1px solid #ddd;
+        outline: none;
+        background: transparent;
+      }
+      
+      label {
+        position: absolute;
+        top: -10px;
+        left: 0;
+        font-size: 14px;
+        color: #999;
+      }
+      
+      .highlight {
+         position: absolute;
+         height: calc(100% + 10px);
+         width: calc(100% + 10px);
+         top: -5px;
+         left: -5px;
+         pointer-events: none;
+         opacity: .5; 
+         transition: all .3s ease-in-out; 
+      }
+      
+      input:hover ~ .highlight,
+      input:focus ~ .highlight {
+         background-color: #5264AE; 
+         opacity: .3; 
+      }
+      
+      input:focus {
+         border-bottom-color: #5264AE; 
+      }
+      
+      .submit-btn {
+         width: calc(100% - (20px * (1/3)));
+         padding: 10px;
+         background-color: #5264AE;
+         color: white;
+         border-radius:4px; 
+         border:none; 
+         cursor:pointer; 
+         transition:.3s ease-in-out; 
+      }
+      
+      .submit-btn:hover {
+         background-color:#3f51b5; 
+      }
+      
+</style>
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <!-- Required vendors -->
+    <script src="{% static 'vendor/global/global.min.js' %}"></script>
+    <script src="{% static 'js/quixnav-init.js' %}" ></script>
+    <script src="{% static 'js/custom.min.js' %}" ></script>
+
+
+    <!-- Vectormap -->
+    <script src="{% static 'vendor/raphael/raphael.min.js' %}"></script>
+    <script src="{% static 'vendor/morris/morris.min.js' %}"></script>
+
+
+    <script src="{% static 'vendor/circle-progress/circle-progress.min.js' %}"></script>
+    <script src="{% static 'vendor/chart.js/Chart.bundle.min.js' %}"></script>
+
+    <script src="{% static 'vendor/gaugeJS/dist/gauge.min.js' %}"></script>
+
+    <!--  flot-chart js -->
+    <script src="{% static 'vendor/flot/jquery.flot.js' %}"></script>
+    <script src="{% static 'vendor/flot/jquery.flot.resize.js' %}"></script>
+
+    <!-- Owl Carousel -->
+    <script src="{% static 'vendor/owl-carousel/js/owl.carousel.min.js' %}"></script>
+
+    <!-- Counter Up -->
+    <script src="{% static 'vendor/jqvmap/js/jquery.vmap.min.js' %}"></script>
+    <script src="{% static 'vendor/jqvmap/js/jquery.vmap.usa.js' %}"></script>
+    <script src="{% static 'vendor/jquery.counterup/jquery.counterup.min.js' %}"></script>
+
+
+    <script src="{% static 'js/dashboard/dashboard-1.js' %}"></script>
+
+</body>
+
+</html>
