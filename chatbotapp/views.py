@@ -15,6 +15,113 @@ from django.http import JsonResponse
 import joblib
 import json
 import numpy as np
+# Create your views here.
+from django.shortcuts import render
+from .models import Feedback
+
+def index(request):
+    feedback_list = Feedback.objects.select_related('Reviewer').all()
+    return render(request, 'main/index.html', {'feedback_list': feedback_list})
+
+
+
+
+def contact(request):
+    return render(request, 'main/contact.html')
+
+# views.py
+
+from django.shortcuts import render, redirect
+from django.contrib import messages
+from .models import UserModel
+
+def user_registers(req):
+    if req.method == "POST":
+        fullname = req.POST.get("name")  # Matching the HTML 'name' field
+        email = req.POST.get("email")
+        password = req.POST.get("password")
+        confirm_password = req.POST.get("confirm_password")  # New field for confirm password
+
+        # List to store missing fields
+        missing_fields = []
+        if not fullname:
+            missing_fields.append("Name")
+        if not email:
+            missing_fields.append("Email")
+        if not password:
+            missing_fields.append("Password")
+        if not confirm_password:
+            missing_fields.append("Confirm Password")
+        
+        # Show message if any fields are missing
+        if missing_fields:
+            missing_fields_str = ", ".join(missing_fields)
+            messages.warning(req, f"Please fill the following fields: {missing_fields_str}")
+            return redirect("register")
+        
+        # Check if the email is already registered
+        try:
+            data = UserModel.objects.get(user_email=email)
+            messages.warning(req, "Email is already registered, choose another email.")
+            return redirect("user_login")
+        except UserModel.DoesNotExist:
+            # Password matching check
+            if password != confirm_password:
+                messages.warning(req, "Passwords do not match.")
+                return redirect("user_register")
+            
+            # Create user record if all validations pass
+            UserModel.objects.create(
+                user_name=fullname,
+                user_email=email,
+                user_password=password,  # You might want to hash this password before storing it
+            )
+           
+            req.session["user_email"] = email
+            messages.success(req, "Your account was created successfully.")
+            return redirect("user_login")
+    
+    return render(req, 'main/user-register.html')
+
+# views.py
+
+from django.shortcuts import render, redirect
+from django.contrib import messages
+from django.contrib.auth.hashers import check_password  # To securely check the password
+from .models import UserModel
+
+def user_logins(request):
+    if request.method == 'POST':
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+        
+        try:
+            # Get the user by email
+            user = UserModel.objects.get(user_email=email)
+            
+            # Check if the password is correct (using check_password to verify hashed password)
+            if (password==user.user_password):  # compare plain password with hashed one
+                # Set session for the logged-in user
+                request.session['user_id'] = user.user_id
+                messages.success(request, 'Login Successful')
+                return redirect('index')
+            else:
+                messages.error(request, 'Invalid Login Credentials')
+                return redirect('user_login')
+        except UserModel.DoesNotExist:
+            # Handle case when the user is not found
+            messages.error(request, 'Invalid Login Credentials')
+            return redirect('user_login')
+    
+    return render(request, 'main/user-login.html')
+
+def eamcet(request):
+    return render(request, 'EamcetCollegeList.html')
+
+
+def locationbased(request):
+    return render(request, 'jobfinderbasedonLocation.html')
+
 
 # Load trained model and vectorizer
 model = joblib.load("logistic_regression_chatbot_model.pkl")
@@ -42,9 +149,40 @@ def chatbot_response(request):
 
 
 
-# Create your views here.
+from django.shortcuts import render
+from django.utils.timezone import now
+from .models import UserModel, Feedback
+
+from django.shortcuts import render
+from django.db.models import Count
+from .models import UserModel, Feedback, Conversation
+
 def user_index(request):
-    return render(request, 'index.html')
+    total_users = UserModel.objects.count()
+    total_feedbacks = Feedback.objects.count()
+
+    # Count chatbot conversations per day
+    chatbot_interactions = (
+        Conversation.objects.values("created_at__date")
+        .annotate(count=Count("id"))
+        .order_by("created_at__date")
+    )
+
+    # Convert to JSON-friendly format
+    interaction_chart_data = [
+        {"date": str(entry["created_at__date"]), "count": entry["count"]}
+        for entry in chatbot_interactions
+    ]
+
+    context = {
+        "total_users": total_users,
+        "total_feedbacks": total_feedbacks,
+        "interaction_chart_data": interaction_chart_data,
+    }
+
+    return render(request, "index.html", context)
+
+
 
 def user_profile(req):
     user_id = req.session["user_id"]
@@ -109,7 +247,7 @@ def user_feedback(request):
                 Sentiment=sentiment,
                 Reviewer=user
             )
-            
+            print(rating, review)
             messages.success(request, "Feedback recorded")
             return redirect("feedback")  # Redirecting to the same page
 
@@ -310,11 +448,24 @@ import requests
 from django.conf import settings
 from django.shortcuts import render, redirect
 from .models import Conversation
+import re
+import requests
+from django.conf import settings
+from django.shortcuts import render, redirect
+from django.views.decorators.csrf import csrf_exempt
+from .models import Conversation
+
+import re
+import requests
+from django.conf import settings
+from django.shortcuts import render, redirect
+from django.views.decorators.csrf import csrf_exempt
+from .models import Conversation
 
 @csrf_exempt
 def user_chatbot(request):
     conversations = Conversation.objects.all().order_by('created_at')
-    
+
     if request.method == 'POST':
         user_message = request.POST.get('message', '').strip()
         if user_message:
@@ -363,6 +514,16 @@ def user_chatbot(request):
             return redirect('chatbot')
     
     return render(request, 'chatbot.html', {'conversations': conversations})
+
+@csrf_exempt
+def delete_conversations(request):
+    """ Deletes all chatbot conversations """
+    if request.method == "POST":
+        Conversation.objects.all().delete()
+    return redirect('chatbot')
+
+
+
 import nltk
 import pandas as pd
 from nltk import download
@@ -505,18 +666,71 @@ def job(request):
 
 
 
+import pandas as pd
+from django.shortcuts import render, redirect
+from django.http import HttpResponse
 
+# Load the Excel file into a DataFrame
 
+def predict_college(rank, gender, allocated_category, region, df):
+    """
+    Predicts the college based on RANK, GENDER, ALLOCATED CATEGORY, and REGION.
 
-import csv
-from django.shortcuts import render
-import random
+    Parameters:
+    - rank (float): The rank of the student.
+    - gender (str): The gender ('M' or 'F').
+    - allocated_category (str): The allocated category.
+    - region (str): The region.
+
+    Returns:
+    - str: Predicted college name or 'No match found' if no match exists.
+    """
+    df = pd.read_excel('combined_colleges.xlsx')
+
+    # Filter the dataset based on the provided inputs
+    filtered_df = df[
+        (df["RANK"] == rank) &
+        (df["GENDER"] == gender) &
+        (df["ALLOCATED CATEGORY"] == allocated_category) &
+        (df["REGION"] == region)
+    ]
+
+    # Return the college name if a match is found
+    if not filtered_df.empty:
+        return filtered_df["College"].values[0]  # Return the first matching result
+    else:
+        return "No match found"
 
 def user_information(request):
-    data = []
-    with open('Apcollegslist.csv', newline='') as csvfile:
-        csvreader = csv.DictReader(csvfile)
-        for row in csvreader:
-            data.append(row)
+    df = pd.read_excel('combined_colleges.xlsx')
+
+    if request.method == 'POST':
+        rank = int(request.POST.get('rank'))
+        gender = request.POST.get('gender')
+        allocated_category = request.POST.get('allocated_category')
+        region = request.POST.get('region')
+        print(rank, gender, allocated_category, region, 'dsssssssssssssssssssssssssssss')
+        df = pd.read_excel('combined_colleges.xlsx')
+
+        predicted_college = predict_college(rank, gender, allocated_category, region, df)
+        print(predict_college,predicted_college,'sdfsssssssssssssssssssssssssssss')
+        return render(request, 'information.html', {'predicted_college': predicted_college})
+    else:
+        return render(request, 'information.html')
+
+
+
+
+
+# import csv
+# from django.shortcuts import render
+# import random
+
+# def user_information(request):
+#     data = []
+#     with open('Apcollegslist.csv', newline='') as csvfile:
+#         csvreader = csv.DictReader(csvfile)
+#         for row in csvreader:
+#             data.append(row)
     
-    return render(request, 'information.html', {'data': data})
+#     return render(request, 'information.html', {'data': data})

@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{% static 'vendor/owl-carousel/css/owl.theme.default.min.css' %}">
     <link href="{% static 'vendor/jqvmap/css/jqvmap.min.css' %}" rel="stylesheet">
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
 
 
@@ -43,105 +44,164 @@
         <!--**********************************
             Nav header start
         ***********************************-->
-        <div class="nav-header">
-            <a href="index.html" class="brand-logo">
-           <h3 style="color: aliceblue;">&nbsp;AP&nbsp;</h3>
-           <h6 style="color: aliceblue; padding-top: 2px;">College Guide</h6>
-            </a>
+        <style>
+            /* Basic styles for the nav-header */
+.nav-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #333; /* Example background color */
+}
 
-            <div class="nav-control">
-                <div class="hamburger">
-                    <span class="line"></span><span class="line"></span><span class="line"></span>
-                </div>
-            </div>
-        </div>
-        <!--**********************************
-            Nav header end
-        ***********************************-->
+.brand-logo img {
+    max-width: 100%;
+    height: auto;
+}
 
-        <!--**********************************
-            Header start
-        ***********************************-->
-        <div class="header">
-            <div class="header-content">
-                <nav class="navbar navbar-expand">
-                    <div class="collapse navbar-collapse justify-content-between">
-                        <div class="header-left">
-    <div class="search_bar dropdown" id="searchBar" style="display: none;">
-        <span class="search_icon p-3 c-pointer" data-toggle="dropdown">
-            <i class="mdi mdi-magnify"></i>
-        </span>
-        <div class="dropdown-menu p-0 m-0">
-            <form>
-                <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-            </form>
-        </div>
+
+
+
+
+/* Mobile responsive styles */
+@media screen and (max-width: 768px) {
+    .nav-header {
+        padding: 10px;
+    }
+
+
+    .brand-logo img {
+        max-width: 150px; /* Limit logo size on smaller screens */
+    }
+
+    /* Make the nav-header content stack vertically on mobile */
+    .nav-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* Optional: Style adjustments for mobile */
+@media screen and (max-width: 480px) {
+    .brand-logo img {
+        max-width: 120px; /* Smaller logo on very small screens */
+    }
+}
+
+</style>
+<div class="nav-header py-5">
+<a href="{% url 'index' %}" class="brand-logo">
+    <img src="{% static 'aps.png' %}" alt="AP College Guide Logo" class="logo-img">
+</a>
+<div class="nav-control">
+    <div class="hamburger">
+        <span class="line"></span><span class="line"></span><span class="line"></span>
     </div>
+</div>
+</div>
+
+<!--**********************************
+Nav header end
+***********************************-->
+
+<!--**********************************
+Header start
+***********************************-->
+<div class="header">
+<div class="header-content">
+    <nav class="navbar navbar-expand">
+        <div class="collapse navbar-collapse justify-content-between">
+            <div class="header-left">
+<div class="search_bar dropdown" id="searchBar" style="display: none;">
+<span class="search_icon p-3 c-pointer" data-toggle="dropdown">
+<i class="mdi mdi-magnify"></i>
+</span>
+<div class="dropdown-menu p-0 m-0">
+<form>
+    <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+</div>
+</div>
 </div>
 
 <script>
 // Function to toggle the visibility of the search bar
 function toggleSearchBar() {
-    const searchBar = document.getElementById('searchBar');
-    if (searchBar.style.display === 'none') {
-        searchBar.style.display = 'block';
-    } else {
-        searchBar.style.display = 'none';
-    }
+const searchBar = document.getElementById('searchBar');
+if (searchBar.style.display === 'none') {
+searchBar.style.display = 'block';
+} else {
+searchBar.style.display = 'none';
+}
 }
 
-// Call toggleSearchBar() when needed to show/hide the search bar
-// Example: show the search bar after a delay or on button click
 </script>
 
-                    </div>
-                </nav>
-            </div>
-        </div>
-        <!--**********************************
-            Header end ti-comment-alt
-        ***********************************-->
+<ul class="navbar-nav header-right">
+<li class="nav-item dropdown header-profile">
+<a class="nav-link" href="#" role="button" data-toggle="dropdown">
+<i class="mdi mdi-account"></i> <!-- User Icon -->
+</a>
+<div class="dropdown-menu dropdown-menu-right">
+<!-- Profile Link -->
+<a href="{% url 'profile' %}" class="dropdown-item">
+    <i class="icon-user"></i> <!-- Icon for Profile -->
+    <span class="ml-2">Profile</span>
+</a>
+<!-- Logout Link -->
+<a href="{% url 'user_login' %}" class="dropdown-item">
+    <i class="icon-key"></i>
+    <span class="ml-2">Logout</span>
+</a>
+</div>
+</li>
+</ul>
 
-        <!--**********************************
-            Sidebar start
-        ***********************************-->
-        <div class="quixnav">
-            <div class="quixnav-scroll">
-                <ul class="metismenu" id="menu" style="padding-top: 15px;">
-                    <li><a href="{% url 'index' %}"><i class="icon icon-single-04"></i><span class="nav-text">Dashboard</span></a></li>
-        
-                    <li class="nav-label first">Job Predication</li>
-                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="icon icon-single-04"></i><span class="nav-text">Features</span></a>
-                        <ul aria-expanded="false">
-                            <li><a href="{% url 'features' %}">Job Predication</a></li>
-                            <li><a href="{% url 'new_features' %}">Job Details</a></li>
-                        </ul>
-                    </li>
-        
-                    <li class="nav-label">Apps</li>
-                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="icon icon-app-store"></i><span class="nav-text">Apps</span></a>
-                        <ul aria-expanded="false">
-                            <li><a href="{% url 'profile' %}">Profile</a></li>
-                            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">FeedBack Analytics</a>
-                                <ul aria-expanded="false">
-                                    <li><a href="{% url 'feedback' %}">Feedback</a></li>
-                                    <li><a href="{% url 'feedback_graph' %}">Feedback Graph</a></li>
-                                </ul>
-                            </li>
-                            
-                        </ul>
-                    </li>
-        
-                    <li class="nav-label">CHATBOT</li>
-                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="icon icon-single-copy-06"></i><span class="nav-text">VVIT</span></a>
-                        <ul aria-expanded="false">
-                            <li><a href="{% url 'chatbot' %}">ChatBot</a></li>
-                            <li><a href="{% url 'information' %}">Information</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
         </div>
+    </nav>
+</div>
+</div>
+<!--**********************************
+Header end ti-comment-alt
+***********************************-->
+
+<!--**********************************
+Sidebar start
+***********************************-->
+<div class="quixnav">
+    <div class="quixnav-scroll">
+        <ul class="metismenu" id="menu" style="padding-top: 15px;">
+            <!-- User Dashboard Section -->
+            <li class="nav-label first" style="color: azure;">User Dashboard</li>
+            <li><a href="{% url 'index' %}"><i class="fas fa-tachometer-alt"></i><span class="nav-text" style="color: white;">Dashboard</span></a></li>
+            
+            <!-- Job Search Section -->
+            <li class="nav-label first" style="color: white;">Job Prediction</li>
+            <li><a href="{% url 'features' %}"><i class="fa fa-briefcase"></i><span class="nav-text" style="color: white;">Job Prediction</span></a></li>
+            <li><a href="{% url 'locationbased' %}"><i class="fa fa-briefcase"></i><span class="nav-text" style="color: white;">Job Search</span></a></li>
+  
+  
+            <li class="nav-label first" style="color: white;">College suggestion</li>
+            <li><a href="{% url 'eamcet' %}"><i class="fa fa-university"></i><span class="nav-text" style="color: white;">Eamcet Colleges</span></a></li>
+            
+  
+            <li class="nav-label first" style="color: white;">College Guide</li>
+            <li><a href="{% url 'chatbot' %}"><i class="fas fa-robot"></i><span class="nav-text" style="color: white;">Chatbot</span></a></li>
+    
+  
+            <!-- Feedback Analytics Section -->
+            <li class="nav-label first" style="color: white;">FeedBack Analytics</li>
+            <li><a href="{% url 'feedback' %}"><i class="fa fa-comments"></i><span class="nav-text" style="color: white;">Feedback</span></a></li>
+            <li><a href="{% url 'feedback_graph' %}"><i class="fas fa-chart-line"></i><span class="nav-text" style="color: white;">Feedback Graph</span></a></li>
+            
+            <!-- College Guide Section -->
+      
+            <!-- College Suggestion Section -->
+           
+        </ul>
+      </div>
+  </div>
+  
         
         <!--**********************************
             Sidebar end
@@ -152,70 +212,107 @@ function toggleSearchBar() {
         ***********************************-->
         <div class="content-body">
             <div class="container-fluid">
-                <div class="row page-titles mx-0">
-                    <div class="col-sm-6 p-md-0">
-                        <div class="welcome-text">
-                            <h4>Hi, welcome back!</h4>
-                            <span class="ml-1">Email</span>
-                        </div>
+                <div class="card">
+                    <h3 class="card-title text-center">Feedback Form</h3>
+                <div class="row justify-content-center">
+                    <div class="col-lg-6 col-md-8 col-12">
+                        <div class="alert alert-primary shadow-lg text-primary">
+                        <h2 class="text-center  mb-3">We Value Your Feedback</h2>
+                        <p class="text-center text-muted alert-heading mb-4">
+                            Your feedback helps us improve. Please rate your experience and share your thoughts below.
+                        </p>
                     </div>
-                    <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="javascript:void(0)">Email</a></li>
-                            <li class="breadcrumb-item active"><a href="javascript:void(0)">Inbox</a></li>
-                        </ol>
+
+                      <div class="card-container">
+
+        <form method="post" onsubmit="return validateForm()" id="feedbackForm">
+            {% csrf_token %}
+            <div class="row g-3 justify-content-center">
+
+                <!-- Rating Section -->
+                <div class="col-12 text-center">
+                    <div class="rating">
+                        <input type="radio" name="rating" value="5" id="star5">
+                        <label for="star5">☆</label>
+                        <input type="radio" name="rating" value="4" id="star4">
+                        <label for="star4">☆</label>
+                        <input type="radio" name="rating" value="3" id="star3">
+                        <label for="star3">☆</label>
+                        <input type="radio" name="rating" value="2" id="star2">
+                        <label for="star2">☆</label>
+                        <input type="radio" name="rating" value="1" id="star1">
+                        <label for="star1">☆</label>
+                    </div>
+                    <div id="ratingError" class="text-danger mt-2" style="display: none;">
+                        Please select a rating.
                     </div>
                 </div>
-                <!-- row -->
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="card">
-                            <div class="contact">
-                                <div class="container">
-                                    <div class="row">
-                                       
-                        
-                            <!-- Contact Content -->
-<div class="col-lg-6 col-md-8 col-12 mx-auto">
-    <div class="contact_form_container">
-      <div class="contact_form_title text-center mb-4">Feedback</div>
-      <form method="post" onsubmit="return validateForm()" id="feedbackForm">
-        {% csrf_token %}
-        <div class="row g-3 justify-content-center">
-          
-          <!-- Rating Section -->
-          <div class="col-12">
-            <div class="rating text-center">
-              <input type="radio" name="rating" value="5" id="5">
-              <label for="5">☆</label>
-              <input type="radio" name="rating" value="4" id="4">
-              <label for="4">☆</label>
-              <input type="radio" name="rating" value="3" id="3">
-              <label for="3">☆</label>
-              <input type="radio" name="rating" value="2" id="2">
-              <label for="2">☆</label>
-              <input type="radio" name="rating" value="1" id="1">
-              <label for="1">☆</label>
-              <div id="ratingError" class="text-danger" style="display: none;">Please select a rating.</div>
+
+                <!-- Review Section -->
+                <div class="col-12">
+                    <label for="review" class="form-label fw-bold">Your Comments</label>
+                    <textarea class="form-control" placeholder="Type your comments..." name="review" id="review" rows="5"></textarea>
+                    <div id="reviewError" class="text-danger mt-2" style="display: none;">
+                        Please enter your comments.
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="col-12 text-center mt-4">
+                    <button class="btn btn-primary px-5 py-2" type="submit">Submit</button>
+                </div>
+
             </div>
-          </div>
-          
-          <!-- Review Section -->
-          <div class="col-12">
-            <div class="form-group">
-              <textarea class="form-control" placeholder="Type your comments..." name="review" id="review" rows="5"></textarea>
-              <div id="reviewError" class="text-danger" style="display: none;">Please enter your comments.</div>
-            </div>
-          </div>
-          
-          <!-- Submit Button -->
-          <div class="col-12 text-center mt-4">
-            <button class="btn btn-primary" type="submit">Submit</button>
-          </div>
-  
-        </div>
-      </form>
+        </form>
     </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <style>
+            .rating {
+                direction: rtl;
+                unicode-bidi: bidi-override;
+                font-size: 30px;
+            }
+        
+            .rating input {
+                display: none;
+            }
+        
+            .rating label {
+                color: #ccc;
+                cursor: pointer;
+                padding: 5px;
+            }
+        
+            .rating input:checked ~ label {
+                color: #f5c518;
+            }
+        
+            .rating label:hover,
+            .rating label:hover ~ label {
+                color: #f5c518;
+            }
+        </style>
+        
+        <script>
+            function validateForm() {
+                let ratingChecked = document.querySelector('input[name="rating"]:checked');
+                let reviewText = document.getElementById('review').value.trim();
+                let ratingError = document.getElementById('ratingError');
+                let reviewError = document.getElementById('reviewError');
+        
+                ratingError.style.display = ratingChecked ? "none" : "block";
+                reviewError.style.display = reviewText ? "none" : "block";
+        
+                return ratingChecked && reviewText;
+            }
+        </script>
+        
   </div>
   
   <!-- CSS -->

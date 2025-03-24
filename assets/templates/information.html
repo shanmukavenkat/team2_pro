@@ -1,3 +1,24 @@
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -13,8 +34,15 @@
     <link rel="stylesheet" href="{% static 'vendor/owl-carousel/css/owl.theme.default.min.css' %}">
     <link href="{% static 'vendor/jqvmap/css/jqvmap.min.css' %}" rel="stylesheet">
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
-
+    <style>
+     
+        iframe {
+            background-color: #0e1117;
+        }
+    </style>
 
 </head>
 
@@ -43,106 +71,120 @@
         <!--**********************************
             Nav header start
         ***********************************-->
-        <div class="nav-header">
-            <a href="index.html" class="brand-logo">
-           <h3 style="color: aliceblue;">&nbsp;AP&nbsp;</h3>
-           <h6 style="color: aliceblue; padding-top: 2px;">College Guide</h6>
-            </a>
-
-            <div class="nav-control">
-                <div class="hamburger">
-                    <span class="line"></span><span class="line"></span><span class="line"></span>
-                </div>
-            </div>
-        </div>
-        <!--**********************************
-            Nav header end
-        ***********************************-->
-
-        <!--**********************************
-            Header start
-        ***********************************-->
-        <div class="header">
-            <div class="header-content">
-                <nav class="navbar navbar-expand">
-                    <div class="collapse navbar-collapse justify-content-between">
-                        <div class="header-left">
-    <div class="search_bar dropdown" id="searchBar" style="display: none;">
-        <span class="search_icon p-3 c-pointer" data-toggle="dropdown">
-            <i class="mdi mdi-magnify"></i>
-        </span>
-        <div class="dropdown-menu p-0 m-0">
-            <form>
-                <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-            </form>
-        </div>
+       
+<div class="nav-header py-5">
+<a href="{% url 'index' %}" class="brand-logo">
+    <img src="{% static 'aps.png' %}" alt="AP College Guide Logo" class="logo-img">
+</a>
+<div class="nav-control">
+    <div class="hamburger">
+        <span class="line"></span><span class="line"></span><span class="line"></span>
     </div>
+</div>
+</div>
+
+<!--**********************************
+Nav header end
+***********************************-->
+
+<!--**********************************
+Header start
+***********************************-->
+<div class="header">
+<div class="header-content">
+    <nav class="navbar navbar-expand">
+        <div class="collapse navbar-collapse justify-content-between">
+            <div class="header-left">
+<div class="search_bar dropdown" id="searchBar" style="display: none;">
+<span class="search_icon p-3 c-pointer" data-toggle="dropdown">
+<i class="mdi mdi-magnify"></i>
+</span>
+<div class="dropdown-menu p-0 m-0">
+<form>
+    <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+</div>
+</div>
 </div>
 
 <script>
 // Function to toggle the visibility of the search bar
 function toggleSearchBar() {
-    const searchBar = document.getElementById('searchBar');
-    if (searchBar.style.display === 'none') {
-        searchBar.style.display = 'block';
-    } else {
-        searchBar.style.display = 'none';
-    }
+const searchBar = document.getElementById('searchBar');
+if (searchBar.style.display === 'none') {
+searchBar.style.display = 'block';
+} else {
+searchBar.style.display = 'none';
+}
 }
 
-// Call toggleSearchBar() when needed to show/hide the search bar
-// Example: show the search bar after a delay or on button click
 </script>
 
-                   
-                    </div>
-                </nav>
-            </div>
-        </div>
-        <!--**********************************
-            Header end ti-comment-alt
-        ***********************************-->
+<ul class="navbar-nav header-right">
+<li class="nav-item dropdown header-profile">
+<a class="nav-link" href="#" role="button" data-toggle="dropdown">
+<i class="mdi mdi-account"></i> <!-- User Icon -->
+</a>
+<div class="dropdown-menu dropdown-menu-right">
+<!-- Profile Link -->
+<a href="{% url 'profile' %}" class="dropdown-item">
+    <i class="icon-user"></i> <!-- Icon for Profile -->
+    <span class="ml-2">Profile</span>
+</a>
+<!-- Logout Link -->
+<a href="{% url 'user_login' %}" class="dropdown-item">
+    <i class="icon-key"></i>
+    <span class="ml-2">Logout</span>
+</a>
+</div>
+</li>
+</ul>
 
-        <!--**********************************
-            Sidebar start
-        ***********************************-->
-        <div class="quixnav">
-            <div class="quixnav-scroll">
-                <ul class="metismenu" id="menu" style="padding-top: 15px;">
-                    <li><a href="{% url 'index' %}"><i class="icon icon-single-04"></i><span class="nav-text">Dashboard</span></a></li>
-        
-                    <li class="nav-label first">Job Predication</li>
-                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="icon icon-single-04"></i><span class="nav-text">Features</span></a>
-                        <ul aria-expanded="false">
-                            <li><a href="{% url 'features' %}">Job Predication</a></li>
-                            <li><a href="{% url 'new_features' %}">Job Details</a></li>
-                        </ul>
-                    </li>
-        
-                    <li class="nav-label">Apps</li>
-                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="icon icon-app-store"></i><span class="nav-text">Apps</span></a>
-                        <ul aria-expanded="false">
-                            <li><a href="{% url 'profile' %}">Profile</a></li>
-                            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">FeedBack Analytics</a>
-                                <ul aria-expanded="false">
-                                    <li><a href="{% url 'feedback' %}">Feedback</a></li>
-                                    <li><a href="{% url 'feedback_graph' %}">Feedback Graph</a></li>
-                                </ul>
-                            </li>
-                            
-                        </ul>
-                    </li>
-        
-                    <li class="nav-label">CHATBOT</li>
-                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="icon icon-single-copy-06"></i><span class="nav-text">VVIT</span></a>
-                        <ul aria-expanded="false">
-                            <li><a href="{% url 'chatbot' %}">ChatBot</a></li>
-                            <li><a href="{% url 'information' %}">Information</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
         </div>
+    </nav>
+</div>
+</div>
+<!--**********************************
+Header end ti-comment-alt
+***********************************-->
+
+<!--**********************************
+Sidebar start
+***********************************-->
+<div class="quixnav">
+    <div class="quixnav-scroll">
+        <ul class="metismenu" id="menu" style="padding-top: 15px;">
+            <!-- User Dashboard Section -->
+            <li class="nav-label first" style="color: azure;">User Dashboard</li>
+            <li><a href="{% url 'index' %}"><i class="fas fa-tachometer-alt"></i><span class="nav-text" style="color: white;">Dashboard</span></a></li>
+            
+            <!-- Job Search Section -->
+            <li class="nav-label first" style="color: white;">Job Prediction</li>
+            <li><a href="{% url 'features' %}"><i class="fa fa-briefcase"></i><span class="nav-text" style="color: white;">Job Prediction</span></a></li>
+            <li><a href="{% url 'locationbased' %}"><i class="fa fa-briefcase"></i><span class="nav-text" style="color: white;">Job Search</span></a></li>
+  
+  
+            <li class="nav-label first" style="color: white;">College suggestion</li>
+            <li><a href="{% url 'eamcet' %}"><i class="fa fa-university"></i><span class="nav-text" style="color: white;">Eamcet Colleges</span></a></li>
+            
+  
+            <li class="nav-label first" style="color: white;">College Guide</li>
+            <li><a href="{% url 'chatbot' %}"><i class="fas fa-robot"></i><span class="nav-text" style="color: white;">Chatbot</span></a></li>
+    
+  
+            <!-- Feedback Analytics Section -->
+            <li class="nav-label first" style="color: white;">FeedBack Analytics</li>
+            <li><a href="{% url 'feedback' %}"><i class="fa fa-comments"></i><span class="nav-text" style="color: white;">Feedback</span></a></li>
+            <li><a href="{% url 'feedback_graph' %}"><i class="fas fa-chart-line"></i><span class="nav-text" style="color: white;">Feedback Graph</span></a></li>
+            
+            <!-- College Guide Section -->
+      
+            <!-- College Suggestion Section -->
+           
+        </ul>
+      </div>
+  </div>
+  
         
         <!--**********************************
             Sidebar end
@@ -151,201 +193,106 @@ function toggleSearchBar() {
         <!--**********************************
             Content body start
         ***********************************-->
-        <div class="content-body">
-            <div class="container-fluid">
-                <div class="row page-titles mx-0">
-                    <div class="col-sm-6 p-md-0">
-                        <div class="welcome-text">
-                            <h4>Hi, welcome back!</h4>
-                            <span class="ml-1">Email</span>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="javascript:void(0)">Email</a></li>
-                            <li class="breadcrumb-item active"><a href="javascript:void(0)">Inbox</a></li>
-                        </ol>
-                    </div>
-                </div>
-                <!-- row -->
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-                
-                                <h1 class="predictor-title">College Predictor</h1>
-                                
-                                <div id="inputFields" class="input-container">
-                                    <input type="text" id="caste" placeholder="Caste" class="predictor-input">
-                                    <input type="number" id="rank" placeholder="Rank" class="predictor-input">
-                                    <input type="text" id="seatCategory" placeholder="Seat Category" class="predictor-input">
-                                    <input type="text" id="branch" placeholder="Branch" class="predictor-input">
-                                    <button onclick="predictCollege()" class="predict-button">Predict</button>
-                                </div>
-                                <div id="pleaseWaitCaption" style="display:none; color: #3498db;">Please wait...</div>
 
-                                <div id="predictionResult" class="prediction-result" style="display:none;">
-                                    <h2 class="result-title">Predicted College Information</h2>
-                                    <p id="predictedCollege" class="result-info"></p>
-                                    <p id="predictedCollegeCode" class="result-info"></p>
-                                    <p id="predictedFee" class="result-info"></p>
-                                </div>
-                                
-                                <table id="collegeTable" class="college-table">
-                                    <thead>
-                                        <tr>
-                                            <th>College Code</th>
-                                            <th>College</th>
-                                            <th>Students per Class</th>
-                                            <th>Fee</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                    </tbody>
-                                </table>
-                
-                                <style>
-                                    .predictor-title {
-                                        color: #2c3e50;
-                                        text-align: center;
-                                        margin-bottom: 30px;
-                                        font-size: 2.5em;
-                                    }
-                                    .input-container {
-                                        display: flex;
-                                        flex-wrap: wrap;
-                                        justify-content: space-between;
-                                        margin-bottom: 20px;
-                                    }
-                                    .predictor-input {
-                                        width: calc(25% - 10px);
-                                        padding: 10px;
-                                        margin-bottom: 10px;
-                                        border: 1px solid #bdc3c7;
-                                        border-radius: 5px;
-                                        font-size: 16px;
-                                    }
-                                    .predict-button {
-                                        width: 100%;
-                                        padding: 12px;
-                                        background-color: #3498db;
-                                        color: white;
-                                        border: none;
-                                        border-radius: 5px;
-                                        font-size: 18px;
-                                        cursor: pointer;
-                                        transition: background-color 0.3s;
-                                    }
-                                    .predict-button:hover {
-                                        background-color: #2980b9;
-                                    }
-                                    .prediction-result {
-                                        background-color: #ecf0f1;
-                                        padding: 20px;
-                                        border-radius: 5px;
-                                        margin-top: 20px;
-                                        margin-bottom: 20px;
-                                    }
-                                    .result-title {
-                                        color: #2c3e50;
-                                        font-size: 1.8em;
-                                        margin-bottom: 15px;
-                                    }
-                                    .result-info {
-                                        font-size: 1.2em;
-                                        margin-bottom: 10px;
-                                        color: #34495e;
-                                    }
-                                    .college-table {
-                                        width: 100%;
-                                        border-collapse: collapse;
-                                        margin-top: 20px;
-                                    }
-                                    .college-table th, .college-table td {
-                                        border: 1px solid #bdc3c7;
-                                        padding: 12px;
-                                        text-align: left;
-                                    }
-                                    .college-table th {
-                                        background-color: #3498db;
-                                        color: white;
-                                    }
-                                    .college-table tr:nth-child(even) {
-                                        background-color: #f2f2f2;
-                                    }
-                                    @media (max-width: 768px) {
-                                        .predictor-input {
-                                            width: 100%;
-                                        }
-                                    }
-                                </style>
-                
-                                <script>
-                                    const collegeData = {{ data|safe }};
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            <style>
+        
+        
+                .brand-logo img {
+                    max-width: 100%;
+                    height: auto;
+                }
+        
+                /* Mobile responsive styles */
+                @media screen and (max-width: 768px) {
+                    .nav-header {
+                        padding: 10px;
+                    }
+        
+                    .brand-logo img {
+                        max-width: 150px; /* Limit logo size on smaller screens */
+                    }
+        
+                    /* Make the nav-header content stack vertically on mobile */
+                    .nav-header {
+                        flex-direction: column;
+                        align-items: flex-start;
+                    }
+                }
+        
+                /* Optional: Style adjustments for mobile */
+                @media screen and (max-width: 480px) {
+                    .brand-logo img {
+                        max-width: 120px; /* Smaller logo on very small screens */
+                    }
+                }
+            </style>
+        
+
+            <div class="content-body">
+                <div class="container-fluid">
+                    
+                    <!-- row -->
+                    <div class="row">
+                        
+                        <!-- Form Column -->
+                        <div class="col-lg-6">
+                            <div class="card p-4 shadow-sm">
+                                <h2 class="text-center mb-4">Predict College</h2>
+                                <form method="POST">
+                                    {% csrf_token %}
                                     
-                                    function displayTable() {
-                                        const tableBody = document.querySelector('#collegeTable tbody');
-                                        tableBody.innerHTML = '';
-                                        collegeData.forEach(row => {
-                                            const tr = document.createElement('tr');
-                                            tr.innerHTML = `
-                                                <td>${row.college_code}</td>
-                                                <td>${row.college}</td>
-                                                <td>${row.students_per_class}</td>
-                                                <td>${row.fee}</td>
-                                            `;
-                                            tableBody.appendChild(tr);
-                                        });
-                                    }
-                
-                                    function predictCollege() {
-                                        const caste = document.getElementById('caste').value;
-                                        const rank = document.getElementById('rank').value;
-                                        const seatCategory = document.getElementById('seatCategory').value;
-                                        const branch = document.getElementById('branch').value;
-                
-                                        if (!caste || !rank || !seatCategory || !branch) {
-                                            alert("Please fill in all the fields before making a prediction.");
-                                            return;
-                                        }
-                // Show "Please wait" caption
-                                            document.getElementById('pleaseWaitCaption').style.display = 'block';
-
-   
-                                        setTimeout(() => {
-                                            const randomIndex = Math.floor(Math.random() * collegeData.length);
-                                            const predictedCollege = collegeData[randomIndex];
-                
-                                            document.getElementById('predictedCollege').innerText = `Predicted College: ${predictedCollege.college}`;
-                                            document.getElementById('predictedCollegeCode').innerText = `College Code: ${predictedCollege.college_code}`;
-                                            document.getElementById('predictedFee').innerText = `Fee: ${predictedCollege.fee}`;
-                
-                                            document.getElementById('predictionResult').style.display = 'block';
-                                            // Hide "Please wait" caption
-                                            document.getElementById('pleaseWaitCaption').style.display = 'none';
-
-                                            clearInputFields();
-                                        }, 2000);
-                                    }
-                
-                                    function clearInputFields() {
-                                        document.getElementById('caste').value = '';
-                                        document.getElementById('rank').value = '';
-                                        document.getElementById('seatCategory').value = '';
-                                        document.getElementById('branch').value = '';
-                                    }
-                
-                                    displayTable();
-                                </script>
+                                    <div class="form-group mb-3">
+                                        <label for="rank">Rank:</label>
+                                        <input type="number" class="form-control" id="rank" name="rank" required>
+                                    </div>
+                                    
+                                    <div class="form-group mb-3">
+                                        <label for="gender">Gender:</label>
+                                        <select class="form-control" id="gender" name="gender" required>
+                                            <option value="">Select Gender</option>
+                                            <option value="M">Male</option>
+                                            <option value="F">Female</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="form-group mb-3">
+                                        <label for="allocated_category">Allocated Category:</label>
+                                        <input type="text" class="form-control" id="allocated_category" name="allocated_category" required>
+                                    </div>
+                                    
+                                    <div class="form-group mb-3">
+                                        <label for="region">Region:</label>
+                                        <input type="text" class="form-control" id="region" name="region" required>
+                                    </div>
+                                    
+                                    <button type="submit" class="btn btn-primary w-100">Predict College</button>
+                                </form>
+            
+                                {% if predicted_college %}
+                                    <h3 class="mt-4 text-center text-success">Predicted College: {{ predicted_college }}</h3>
+                                {% endif %}
                             </div>
                         </div>
+                        
+                        <!-- Image Column -->
+                        <div class="col-lg-6">
+                            <div class="card p-4 shadow-sm text-center">
+                                <!-- Use the static tag to link to the image -->
+                                <img src="{% static 'admin/images/auth/students_09.jpg' %}" class="img-fluid" alt="College Image">
+                            </div>
+                        </div>
+            
                     </div>
+                    
                 </div>
-                
-
             </div>
-        </div>
+            
+        
+  
+
+        
         <!--**********************************
             Content body end
         ***********************************-->
@@ -354,7 +301,7 @@ function toggleSearchBar() {
         <!--**********************************
             Footer start
         ***********************************-->
-<!---snvsUpdated--->
+     
         <!--**********************************
             Footer end
         ***********************************-->
@@ -376,7 +323,6 @@ function toggleSearchBar() {
     <!--**********************************
         Scripts
     ***********************************-->
-    <!-- Required vendors -->
     <script src="{% static 'vendor/global/global.min.js' %}"></script>
     <script src="{% static 'js/quixnav-init.js' %}" ></script>
     <script src="{% static 'js/custom.min.js' %}" ></script>
@@ -386,6 +332,9 @@ function toggleSearchBar() {
     <script src="{% static 'vendor/raphael/raphael.min.js' %}"></script>
     <script src="{% static 'vendor/morris/morris.min.js' %}"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    
 
     <script src="{% static 'vendor/circle-progress/circle-progress.min.js' %}"></script>
     <script src="{% static 'vendor/chart.js/Chart.bundle.min.js' %}"></script>

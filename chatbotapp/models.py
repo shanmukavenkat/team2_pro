@@ -6,29 +6,39 @@ from django.db import models
 from django.db import models
 from django.contrib.auth.models import User
 
+from django.db import models
+
+class Applicant(models.Model):
+    hall_ticket_no = models.CharField(max_length=100)
+    rank = models.IntegerField()
+    applicant_name = models.CharField(max_length=200)
+    gender = models.CharField(max_length=10)
+    caste = models.CharField(max_length=50)
+    region = models.CharField(max_length=50)
+    allocated_category = models.CharField(max_length=50)
+    phase = models.CharField(max_length=20)
+    group = models.CharField(max_length=20)
+    college = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.applicant_name
+
+
+
+# models.py
+
+from django.db import models
 
 class UserModel(models.Model):
     user_id = models.AutoField(primary_key=True)
     user_name = models.CharField(help_text="user_name", max_length=50)
-    user_age = models.IntegerField(null=True)
     user_email = models.EmailField(help_text="user_email")
-    user_password = models.EmailField(help_text="user_password", max_length=50)
-    user_address = models.TextField(help_text="user_address", max_length=100)
-    user_subject = models.TextField(
-        help_text="user_subject", max_length=100, default="default_value_here"
-    )
-    user_contact = models.CharField(help_text="user_contact", max_length=15, null=True)
-    user_image = models.ImageField(upload_to="media/", null=True)
+    user_password = models.CharField(help_text="user_password", max_length=50)  # Password should be hashed
     Date_Time = models.DateTimeField(auto_now=True, null=True)
-    Otp_Num = models.IntegerField(null=True)
-    Otp_Status = models.TextField(default="pending", max_length=60, null=True)
-    Last_Login_Time = models.TimeField(null=True)
-    Last_Login_Date = models.DateField(auto_now_add=True, null=True)
-    No_Of_Times_Login = models.IntegerField(default=0, null=True)
-    Message = models.TextField(max_length=250, null=True)
 
     class Meta:
         db_table = "UserModel"
+
             
 
 class Feedback(models.Model):
@@ -50,7 +60,8 @@ class Conversation(models.Model):
 
     def __str__(self):
         return f"User: {self.user_message[:50]}..."
-    
+
+
 
 # models.py
 from django.db import models

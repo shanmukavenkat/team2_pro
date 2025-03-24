@@ -14,6 +14,7 @@
     <link href="{% static 'vendor/jqvmap/css/jqvmap.min.css' %}" rel="stylesheet">
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
 
 </head>
@@ -43,179 +44,164 @@
         <!--**********************************
             Nav header start
         ***********************************-->
-        <div class="nav-header">
-            <a href="index.html" class="brand-logo">
-           <h3 style="color: aliceblue;">&nbsp;AP&nbsp;</h3>
-           <h6 style="color: aliceblue; padding-top: 2px;">College Guide</h6>
-            </a>
+        <style>
+            /* Basic styles for the nav-header */
+.nav-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #333; /* Example background color */
+}
 
-            <div class="nav-control">
-                <div class="hamburger">
-                    <span class="line"></span><span class="line"></span><span class="line"></span>
-                </div>
-            </div>
-        </div>
-        <!--**********************************
-            Nav header end
-        ***********************************-->
+.brand-logo img {
+    max-width: 100%;
+    height: auto;
+}
 
-        <!--**********************************
-            Header start
-        ***********************************-->
-        <div class="header">
-            <div class="header-content">
-                <nav class="navbar navbar-expand">
-                    <div class="collapse navbar-collapse justify-content-between">
-                        <div class="header-left">
-    <div class="search_bar dropdown" id="searchBar" style="display: none;">
-        <span class="search_icon p-3 c-pointer" data-toggle="dropdown">
-            <i class="mdi mdi-magnify"></i>
-        </span>
-        <div class="dropdown-menu p-0 m-0">
-            <form>
-                <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-            </form>
-        </div>
+
+
+
+
+/* Mobile responsive styles */
+@media screen and (max-width: 768px) {
+    .nav-header {
+        padding: 10px;
+    }
+
+
+    .brand-logo img {
+        max-width: 150px; /* Limit logo size on smaller screens */
+    }
+
+    /* Make the nav-header content stack vertically on mobile */
+    .nav-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* Optional: Style adjustments for mobile */
+@media screen and (max-width: 480px) {
+    .brand-logo img {
+        max-width: 120px; /* Smaller logo on very small screens */
+    }
+}
+
+</style>
+<div class="nav-header py-5">
+<a href="{% url 'index' %}" class="brand-logo">
+    <img src="{% static 'aps.png' %}" alt="AP College Guide Logo" class="logo-img">
+</a>
+<div class="nav-control">
+    <div class="hamburger">
+        <span class="line"></span><span class="line"></span><span class="line"></span>
     </div>
+</div>
+</div>
+
+<!--**********************************
+Nav header end
+***********************************-->
+
+<!--**********************************
+Header start
+***********************************-->
+<div class="header">
+<div class="header-content">
+    <nav class="navbar navbar-expand">
+        <div class="collapse navbar-collapse justify-content-between">
+            <div class="header-left">
+<div class="search_bar dropdown" id="searchBar" style="display: none;">
+<span class="search_icon p-3 c-pointer" data-toggle="dropdown">
+<i class="mdi mdi-magnify"></i>
+</span>
+<div class="dropdown-menu p-0 m-0">
+<form>
+    <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+</div>
+</div>
 </div>
 
 <script>
 // Function to toggle the visibility of the search bar
 function toggleSearchBar() {
-    const searchBar = document.getElementById('searchBar');
-    if (searchBar.style.display === 'none') {
-        searchBar.style.display = 'block';
-    } else {
-        searchBar.style.display = 'none';
-    }
+const searchBar = document.getElementById('searchBar');
+if (searchBar.style.display === 'none') {
+searchBar.style.display = 'block';
+} else {
+searchBar.style.display = 'none';
+}
 }
 
-// Call toggleSearchBar() when needed to show/hide the search bar
-// Example: show the search bar after a delay or on button click
 </script>
 
-                        <ul class="navbar-nav header-right">
-                            <li class="nav-item dropdown notification_dropdown">
-                                <a class="nav-link" href="#" role="button" data-toggle="dropdown">
-                                    <i class="mdi mdi-bell"></i>
-                                    <div class="pulse-css"></div>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-right">
-                                    <ul class="list-unstyled">
-                                        <li class="media dropdown-item">
-                                            <span class="success"><i class="ti-user"></i></span>
-                                            <div class="media-body">
-                                                <a href="#">
-                                                    <p><strong>Martin</strong> has added a <strong>customer</strong> Successfully
-                                                    </p>
-                                                </a>
-                                            </div>
-                                            <span class="notify-time">3:20 am</span>
-                                        </li>
-                                        <li class="media dropdown-item">
-                                            <span class="primary"><i class="ti-shopping-cart"></i></span>
-                                            <div class="media-body">
-                                                <a href="#">
-                                                    <p><strong>Jennifer</strong> purchased Light Dashboard 2.0.</p>
-                                                </a>
-                                            </div>
-                                            <span class="notify-time">3:20 am</span>
-                                        </li>
-                                        <li class="media dropdown-item">
-                                            <span class="danger"><i class="ti-bookmark"></i></span>
-                                            <div class="media-body">
-                                                <a href="#">
-                                                    <p><strong>Robin</strong> marked a <strong>ticket</strong> as unsolved.
-                                                    </p>
-                                                </a>
-                                            </div>
-                                            <span class="notify-time">3:20 am</span>
-                                        </li>
-                                        <li class="media dropdown-item">
-                                            <span class="primary"><i class="ti-heart"></i></span>
-                                            <div class="media-body">
-                                                <a href="#">
-                                                    <p><strong>David</strong> purchased Light Dashboard 1.0.</p>
-                                                </a>
-                                            </div>
-                                            <span class="notify-time">3:20 am</span>
-                                        </li>
-                                        <li class="media dropdown-item">
-                                            <span class="success"><i class="ti-image"></i></span>
-                                            <div class="media-body">
-                                                <a href="#">
-                                                    <p><strong> James.</strong> has added a<strong>customer</strong> Successfully
-                                                    </p>
-                                                </a>
-                                            </div>
-                                            <span class="notify-time">3:20 am</span>
-                                        </li>
-                                    </ul>
-                                    <a class="all-notification" href="#">See all notifications <i
-                                            class="ti-arrow-right"></i></a>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown header-profile">
-                                <a class="nav-link" href="#" role="button" data-toggle="dropdown">
-                                    <i class="mdi mdi-account"></i>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-right">
-                                  
-                                    <a href="{% url 'login' %}" class="dropdown-item">
-                                        <i class="icon-key"></i>
-                                        <span class="ml-2">Logout </span>
-                                    </a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-        </div>
-        <!--**********************************
-            Header end ti-comment-alt
-        ***********************************-->
+<ul class="navbar-nav header-right">
+<li class="nav-item dropdown header-profile">
+<a class="nav-link" href="#" role="button" data-toggle="dropdown">
+<i class="mdi mdi-account"></i> <!-- User Icon -->
+</a>
+<div class="dropdown-menu dropdown-menu-right">
+<!-- Profile Link -->
+<a href="{% url 'profile' %}" class="dropdown-item">
+    <i class="icon-user"></i> <!-- Icon for Profile -->
+    <span class="ml-2">Profile</span>
+</a>
+<!-- Logout Link -->
+<a href="{% url 'user_login' %}" class="dropdown-item">
+    <i class="icon-key"></i>
+    <span class="ml-2">Logout</span>
+</a>
+</div>
+</li>
+</ul>
 
-        <!--**********************************
-            Sidebar start
-        ***********************************-->
-        <div class="quixnav">
-            <div class="quixnav-scroll">
-                <ul class="metismenu" id="menu" style="padding-top: 15px;">
-                    <li><a href="{% url 'index' %}"><i class="icon icon-single-04"></i><span class="nav-text">Dashboard</span></a></li>
-        
-                    <li class="nav-label first">Job Predication</li>
-                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="icon icon-single-04"></i><span class="nav-text">Features</span></a>
-                        <ul aria-expanded="false">
-                            <li><a href="{% url 'features' %}">Job Predication</a></li>
-                            <li><a href="{% url 'new_features' %}">Job Details</a></li>
-                        </ul>
-                    </li>
-        
-                    <li class="nav-label">Apps</li>
-                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="icon icon-app-store"></i><span class="nav-text">Apps</span></a>
-                        <ul aria-expanded="false">
-                            <li><a href="{% url 'profile' %}">Profile</a></li>
-                            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">FeedBack Analytics</a>
-                                <ul aria-expanded="false">
-                                    <li><a href="{% url 'feedback' %}">Feedback</a></li>
-                                    <li><a href="{% url 'feedback_graph' %}">Feedback Graph</a></li>
-                                </ul>
-                            </li>
-                            
-                        </ul>
-                    </li>
-        
-                    <li class="nav-label">CHATBOT</li>
-                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="icon icon-single-copy-06"></i><span class="nav-text">VVIT</span></a>
-                        <ul aria-expanded="false">
-                            <li><a href="{% url 'chatbot' %}">ChatBot</a></li>
-                            <li><a href="{% url 'information' %}">Information</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
         </div>
+    </nav>
+</div>
+</div>
+<!--**********************************
+Header end ti-comment-alt
+***********************************-->
+
+<!--**********************************
+Sidebar start
+***********************************-->
+<div class="quixnav">
+    <div class="quixnav-scroll">
+        <ul class="metismenu" id="menu" style="padding-top: 15px;">
+            <!-- User Dashboard Section -->
+            <li class="nav-label first" style="color: azure;">User Dashboard</li>
+            <li><a href="{% url 'index' %}"><i class="fas fa-tachometer-alt"></i><span class="nav-text" style="color: white;">Dashboard</span></a></li>
+            
+            <!-- Job Search Section -->
+            <li class="nav-label first" style="color: white;">Job Prediction</li>
+            <li><a href="{% url 'features' %}"><i class="fa fa-briefcase"></i><span class="nav-text" style="color: white;">Job Prediction</span></a></li>
+            <li><a href="{% url 'locationbased' %}"><i class="fa fa-briefcase"></i><span class="nav-text" style="color: white;">Job Search</span></a></li>
+  
+  
+            <li class="nav-label first" style="color: white;">College suggestion</li>
+            <li><a href="{% url 'eamcet' %}"><i class="fa fa-university"></i><span class="nav-text" style="color: white;">Eamcet Colleges</span></a></li>
+            
+  
+            <li class="nav-label first" style="color: white;">College Guide</li>
+            <li><a href="{% url 'chatbot' %}"><i class="fas fa-robot"></i><span class="nav-text" style="color: white;">Chatbot</span></a></li>
+    
+  
+            <!-- Feedback Analytics Section -->
+            <li class="nav-label first" style="color: white;">FeedBack Analytics</li>
+            <li><a href="{% url 'feedback' %}"><i class="fa fa-comments"></i><span class="nav-text" style="color: white;">Feedback</span></a></li>
+            <li><a href="{% url 'feedback_graph' %}"><i class="fas fa-chart-line"></i><span class="nav-text" style="color: white;">Feedback Graph</span></a></li>
+            
+            <!-- College Guide Section -->
+      
+            <!-- College Suggestion Section -->
+           
+        </ul>
+      </div>
+  </div>
+  
         
         <!--**********************************
             Sidebar end
@@ -226,79 +212,47 @@ function toggleSearchBar() {
         ***********************************-->
         <div class="content-body">
             <div class="container-fluid">
-                <div class="row page-titles mx-0">
-                    <div class="col-sm-6 p-md-0">
-                        <div class="welcome-text">
-                            <h4>Hi, welcome back!</h4>
-                            <p class="mb-0">Your business dashboard template</p>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="javascript:void(0)">App</a></li>
-                            <li class="breadcrumb-item active"><a href="javascript:void(0)">Profile</a></li>
-                        </ol>
-                    </div>
-                </div>
+                
                 <!-- row -->
-                <div class="row">
-                    <div class="col-lg-12">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 col-md-10 col-12">
+                        <div class="alert alert-primary shadow-lg text-primary text-center">
+                            <h2 class="mb-3">My Profile </h2>
+                            <p class="text-muted alert-heading mb-4">
+                                Update Your Profile Details Here.
+                            </p>
+                        </div>
+        
+                        <!-- Form -->
                         <form method="POST" enctype="multipart/form-data">
                             {% csrf_token %}
                             <div class="row">
-                                <div class="col-xl-4">
-                                    <!-- Profile picture card-->
-                                    <div class="card mb-4 mb-xl-0" style="background-color: #E5E7E9; height: 440px;">
-                                        <div class="card-header">Profile Picture</div>
-                                        <div class="card-body text-center" name="profilepic">
-                                            <!-- Profile picture image-->
-                                            <img src="/media/{{i.user_image}}" alt="" style="border-radius: 100%; height: 250px; width: 250px;">
-                                            <div class="small font-italic text-muted mb-4"></div>
-                                            <div class="mb-3">
-                                                <input class="form-control" type="file" id="formFile" name="profilepic" style="display: none;">
-                                                <label for="formFile" class="btn button button_1 contact_button" style="background-color: #4761ff; color: white;">
-                                                    CHOOSE FILE
-                                                </label>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-8">
+                                <div class="col-xl-6 col-lg-8 col-12 mx-auto">
                                     <!-- Account details card-->
-                                    <div class="card mb-4" style="background-color: #E5E7E9;">
-                                        <div class="card-header">Account Details</div>
+                                    <div class="card mb-4" style="background-color: #f0f4f8; border-radius: 12px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                                        <div class="card-header" style="background-color: #4761ff; color: white; font-size: 1.25rem; font-weight: bold; text-align: center;">
+                                            Account Information
+                                        </div>
                                         <div class="card-body">
                                             <div class="mb-3">
                                                 <label class="small mb-1 custom-label" for="inputUsername">Username</label>
-                                                <input class="form-control custom-input" id="inputUsername" type="text" name="username" placeholder="Enter your username" value="{{i.user_name}}">
+                                                <input class="form-control custom-input" id="inputUsername" type="text" name="username" placeholder="Enter your username" value="{{i.user_name}}" style="border-radius: 8px; border: 1px solid #dcdfe1; padding: 0.8rem;">
                                             </div>
                                             <div class="row gx-3 mb-3">
                                                 <div class="col-md-6">
-                                                    <label class="small mb-1 custom-label" for="inputFirstName">Email Address</label>
-                                                    <input class="form-control custom-input" id="inputFirstName" name="email" type="email" placeholder="Enter your Email Address" value="{{i.user_email}}">
+                                                    <label class="small mb-1 custom-label" for="inputEmail">Email Address</label>
+                                                    <input class="form-control custom-input" id="inputEmail" name="email" type="email" placeholder="Enter your Email Address" value="{{i.user_email}}" style="border-radius: 8px; border: 1px solid #dcdfe1; padding: 0.8rem;">
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <label class="small mb-1 custom-label" for="inputLastName">Password</label>
-                                                    <input class="form-control custom-input" id="inputLastName" name="Password" type="text" placeholder="Enter your Password" value="{{i.user_password}}">
+                                                    <label class="small mb-1 custom-label" for="inputPassword">Password</label>
+                                                    <input class="form-control custom-input" id="inputPassword" name="password" type="text" placeholder="Enter your Password" value="{{i.user_password}}" style="border-radius: 8px; border: 1px solid #dcdfe1; padding: 0.8rem;">
                                                 </div>
                                             </div>
-                                            <div class="row gx-3 mb-3">
-                                                <div class="col-md-6">
-                                                    <label class="small mb-1 custom-label" for="inputOrgName">Age</label>
-                                                    <input class="form-control custom-input" id="inputOrgName" name="age" type="text" placeholder="Enter your Age" value="{{i.user_age}}">
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <label class="small mb-1 custom-label" for="inputLocation">Address</label>
-                                                    <input class="form-control custom-input" id="inputLocation" name="address" type="text" placeholder="Enter your Address" value="{{i.user_address}}">
-                                                </div>
+                                            <div class="text-center">
+                                                <button class="btn button button_1 contact_button trans_200" type="submit" style="background-color: #4761ff; color: white; padding: 0.9rem 2rem; font-size: 1rem; border-radius: 8px; width: 100%; max-width: 200px;">
+                                                    Save Changes
+                                                </button>
                                             </div>
-                                            <div class="mb-3">
-                                                <label class="small mb-1 custom-label" for="inputEmailAddress">Mobile Number</label>
-                                                <input class="form-control custom-input" id="inputEmailAddress" name="mobile_number" type="text" placeholder="Enter your Mobile Number" value="{{i.user_contact}}">
-                                            </div>
-                                            <button class="btn button button_1 contact_button trans_200" type="submit" style="background-color: #4761ff; color: white;">Save Changes</button>
-                
                                         </div>
                                     </div>
                                 </div>
@@ -309,6 +263,7 @@ function toggleSearchBar() {
              
             </div>
         </div>
+        
         <!--**********************************
             Content body end
         ***********************************-->
@@ -317,7 +272,7 @@ function toggleSearchBar() {
         <!--**********************************
             Footer start
         ***********************************-->
-       <!---snvsUpdated--->
+        
         <!--**********************************
             Footer end
         ***********************************-->

@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{% static 'vendor/owl-carousel/css/owl.theme.default.min.css' %}">
     <link href="{% static 'vendor/jqvmap/css/jqvmap.min.css' %}" rel="stylesheet">
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
 </head>
 
@@ -41,105 +42,164 @@
         <!--**********************************
             Nav header start
         ***********************************-->
-        <div class="nav-header">
-            <a href="index.html" class="brand-logo">
-           <h3 style="color: aliceblue;">&nbsp;AP&nbsp;</h3>
-           <h6 style="color: aliceblue; padding-top: 2px;">College Guide</h6>
-            </a>
+        <style>
+            /* Basic styles for the nav-header */
+.nav-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #333; /* Example background color */
+}
 
-            <div class="nav-control">
-                <div class="hamburger">
-                    <span class="line"></span><span class="line"></span><span class="line"></span>
-                </div>
-            </div>
-        </div>
-        <!--**********************************
-            Nav header end
-        ***********************************-->
+.brand-logo img {
+    max-width: 100%;
+    height: auto;
+}
 
-        <!--**********************************
-            Header start
-        ***********************************-->
-        <div class="header">
-            <div class="header-content">
-                <nav class="navbar navbar-expand">
-                    <div class="collapse navbar-collapse justify-content-between">
-                        <div class="header-left">
-    <div class="search_bar dropdown" id="searchBar" style="display: none;">
-        <span class="search_icon p-3 c-pointer" data-toggle="dropdown">
-            <i class="mdi mdi-magnify"></i>
-        </span>
-        <div class="dropdown-menu p-0 m-0">
-            <form>
-                <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-            </form>
-        </div>
+
+
+
+
+/* Mobile responsive styles */
+@media screen and (max-width: 768px) {
+    .nav-header {
+        padding: 10px;
+    }
+
+
+    .brand-logo img {
+        max-width: 150px; /* Limit logo size on smaller screens */
+    }
+
+    /* Make the nav-header content stack vertically on mobile */
+    .nav-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* Optional: Style adjustments for mobile */
+@media screen and (max-width: 480px) {
+    .brand-logo img {
+        max-width: 120px; /* Smaller logo on very small screens */
+    }
+}
+
+</style>
+<div class="nav-header py-5">
+<a href="{% url 'index' %}" class="brand-logo">
+    <img src="{% static 'aps.png' %}" alt="AP College Guide Logo" class="logo-img">
+</a>
+<div class="nav-control">
+    <div class="hamburger">
+        <span class="line"></span><span class="line"></span><span class="line"></span>
     </div>
+</div>
+</div>
+
+<!--**********************************
+Nav header end
+***********************************-->
+
+<!--**********************************
+Header start
+***********************************-->
+<div class="header">
+<div class="header-content">
+    <nav class="navbar navbar-expand">
+        <div class="collapse navbar-collapse justify-content-between">
+            <div class="header-left">
+<div class="search_bar dropdown" id="searchBar" style="display: none;">
+<span class="search_icon p-3 c-pointer" data-toggle="dropdown">
+<i class="mdi mdi-magnify"></i>
+</span>
+<div class="dropdown-menu p-0 m-0">
+<form>
+    <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+</div>
+</div>
 </div>
 
 <script>
 // Function to toggle the visibility of the search bar
 function toggleSearchBar() {
-    const searchBar = document.getElementById('searchBar');
-    if (searchBar.style.display === 'none') {
-        searchBar.style.display = 'block';
-    } else {
-        searchBar.style.display = 'none';
-    }
+const searchBar = document.getElementById('searchBar');
+if (searchBar.style.display === 'none') {
+searchBar.style.display = 'block';
+} else {
+searchBar.style.display = 'none';
+}
 }
 
-// Call toggleSearchBar() when needed to show/hide the search bar
-// Example: show the search bar after a delay or on button click
 </script>
 
-                    </div>
-                </nav>
-            </div>
-        </div>
-        <!--**********************************
-            Header end ti-comment-alt
-        ***********************************-->
+<ul class="navbar-nav header-right">
+<li class="nav-item dropdown header-profile">
+<a class="nav-link" href="#" role="button" data-toggle="dropdown">
+<i class="mdi mdi-account"></i> <!-- User Icon -->
+</a>
+<div class="dropdown-menu dropdown-menu-right">
+<!-- Profile Link -->
+<a href="{% url 'profile' %}" class="dropdown-item">
+    <i class="icon-user"></i> <!-- Icon for Profile -->
+    <span class="ml-2">Profile</span>
+</a>
+<!-- Logout Link -->
+<a href="{% url 'user_login' %}" class="dropdown-item">
+    <i class="icon-key"></i>
+    <span class="ml-2">Logout</span>
+</a>
+</div>
+</li>
+</ul>
 
-        <!--**********************************
-            Sidebar start
-        ***********************************-->
-        <div class="quixnav">
-            <div class="quixnav-scroll">
-                <ul class="metismenu" id="menu" style="padding-top: 15px;">
-                    <li><a href="{% url 'index' %}"><i class="icon icon-single-04"></i><span class="nav-text">Dashboard</span></a></li>
-        
-                    <li class="nav-label first">Job Predication</li>
-                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="icon icon-single-04"></i><span class="nav-text">Features</span></a>
-                        <ul aria-expanded="false">
-                            <li><a href="{% url 'features' %}">Job Predication</a></li>
-                            <li><a href="{% url 'new_features' %}">Job Details</a></li>
-                        </ul>
-                    </li>
-        
-                    <li class="nav-label">Apps</li>
-                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="icon icon-app-store"></i><span class="nav-text">Apps</span></a>
-                        <ul aria-expanded="false">
-                            <li><a href="{% url 'profile' %}">Profile</a></li>
-                            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">FeedBack Analytics</a>
-                                <ul aria-expanded="false">
-                                    <li><a href="{% url 'feedback' %}">Feedback</a></li>
-                                    <li><a href="{% url 'feedback_graph' %}">Feedback Graph</a></li>
-                                </ul>
-                            </li>
-                            
-                        </ul>
-                    </li>
-        
-                    <li class="nav-label">CHATBOT</li>
-                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="icon icon-single-copy-06"></i><span class="nav-text">VVIT</span></a>
-                        <ul aria-expanded="false">
-                            <li><a href="{% url 'chatbot' %}">ChatBot</a></li>
-                            <li><a href="{% url 'information' %}">Information</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
         </div>
+    </nav>
+</div>
+</div>
+<!--**********************************
+Header end ti-comment-alt
+***********************************-->
+
+<!--**********************************
+Sidebar start
+***********************************-->
+<div class="quixnav">
+    <div class="quixnav-scroll">
+        <ul class="metismenu" id="menu" style="padding-top: 15px;">
+            <!-- User Dashboard Section -->
+            <li class="nav-label first" style="color: azure;">User Dashboard</li>
+            <li><a href="{% url 'index' %}"><i class="fas fa-tachometer-alt"></i><span class="nav-text" style="color: white;">Dashboard</span></a></li>
+            
+            <!-- Job Search Section -->
+            <li class="nav-label first" style="color: white;">Job Prediction</li>
+            <li><a href="{% url 'features' %}"><i class="fa fa-briefcase"></i><span class="nav-text" style="color: white;">Job Prediction</span></a></li>
+            <li><a href="{% url 'locationbased' %}"><i class="fa fa-briefcase"></i><span class="nav-text" style="color: white;">Job Search</span></a></li>
+  
+  
+            <li class="nav-label first" style="color: white;">College suggestion</li>
+            <li><a href="{% url 'eamcet' %}"><i class="fa fa-university"></i><span class="nav-text" style="color: white;">Eamcet Colleges</span></a></li>
+            
+  
+            <li class="nav-label first" style="color: white;">College Guide</li>
+            <li><a href="{% url 'chatbot' %}"><i class="fas fa-robot"></i><span class="nav-text" style="color: white;">Chatbot</span></a></li>
+    
+  
+            <!-- Feedback Analytics Section -->
+            <li class="nav-label first" style="color: white;">FeedBack Analytics</li>
+            <li><a href="{% url 'feedback' %}"><i class="fa fa-comments"></i><span class="nav-text" style="color: white;">Feedback</span></a></li>
+            <li><a href="{% url 'feedback_graph' %}"><i class="fas fa-chart-line"></i><span class="nav-text" style="color: white;">Feedback Graph</span></a></li>
+            
+            <!-- College Guide Section -->
+      
+            <!-- College Suggestion Section -->
+           
+        </ul>
+      </div>
+  </div>
+  
         
         <!--**********************************
             Sidebar end
@@ -212,7 +272,7 @@ function toggleSearchBar() {
         <!--**********************************
             Footer start
         ***********************************-->
-  <!---snvsUpdated--->
+      
         <!--**********************************
             Footer end
         ***********************************-->

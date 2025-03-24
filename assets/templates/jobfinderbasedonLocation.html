@@ -1,0 +1,347 @@
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>CHATBOT</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon.png">
+    <link rel="stylesheet" href="{% static 'vendor/owl-carousel/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'vendor/owl-carousel/css/owl.theme.default.min.css' %}">
+    <link href="{% static 'vendor/jqvmap/css/jqvmap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <style>
+     
+        iframe {
+            background-color: #0e1117;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+        <div class="sk-three-bounce">
+            <div class="sk-child sk-bounce1"></div>
+            <div class="sk-child sk-bounce2"></div>
+            <div class="sk-child sk-bounce3"></div>
+        </div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+        <!--**********************************
+            Nav header start
+        ***********************************-->
+       
+<div class="nav-header py-5">
+<a href="{% url 'index' %}" class="brand-logo">
+    <img src="{% static 'aps.png' %}" alt="AP College Guide Logo" class="logo-img">
+</a>
+<div class="nav-control">
+    <div class="hamburger">
+        <span class="line"></span><span class="line"></span><span class="line"></span>
+    </div>
+</div>
+</div>
+
+<!--**********************************
+Nav header end
+***********************************-->
+
+<!--**********************************
+Header start
+***********************************-->
+<div class="header">
+<div class="header-content">
+    <nav class="navbar navbar-expand">
+        <div class="collapse navbar-collapse justify-content-between">
+            <div class="header-left">
+<div class="search_bar dropdown" id="searchBar" style="display: none;">
+<span class="search_icon p-3 c-pointer" data-toggle="dropdown">
+<i class="mdi mdi-magnify"></i>
+</span>
+<div class="dropdown-menu p-0 m-0">
+<form>
+    <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+</div>
+</div>
+</div>
+
+<script>
+// Function to toggle the visibility of the search bar
+function toggleSearchBar() {
+const searchBar = document.getElementById('searchBar');
+if (searchBar.style.display === 'none') {
+searchBar.style.display = 'block';
+} else {
+searchBar.style.display = 'none';
+}
+}
+
+</script>
+
+<ul class="navbar-nav header-right">
+<li class="nav-item dropdown header-profile">
+<a class="nav-link" href="#" role="button" data-toggle="dropdown">
+<i class="mdi mdi-account"></i> <!-- User Icon -->
+</a>
+<div class="dropdown-menu dropdown-menu-right">
+<!-- Profile Link -->
+<a href="{% url 'profile' %}" class="dropdown-item">
+    <i class="icon-user"></i> <!-- Icon for Profile -->
+    <span class="ml-2">Profile</span>
+</a>
+<!-- Logout Link -->
+<a href="{% url 'user_login' %}" class="dropdown-item">
+    <i class="icon-key"></i>
+    <span class="ml-2">Logout</span>
+</a>
+</div>
+</li>
+</ul>
+
+        </div>
+    </nav>
+</div>
+</div>
+<!--**********************************
+Header end ti-comment-alt
+***********************************-->
+
+<!--**********************************
+Sidebar start
+***********************************-->
+<div class="quixnav">
+    <div class="quixnav-scroll">
+        <ul class="metismenu" id="menu" style="padding-top: 15px;">
+            <!-- User Dashboard Section -->
+            <li class="nav-label first" style="color: azure;">User Dashboard</li>
+            <li><a href="{% url 'index' %}"><i class="fas fa-tachometer-alt"></i><span class="nav-text" style="color: white;">Dashboard</span></a></li>
+            
+            <!-- Job Search Section -->
+            <li class="nav-label first" style="color: white;">Job Prediction</li>
+            <li><a href="{% url 'features' %}"><i class="fa fa-briefcase"></i><span class="nav-text" style="color: white;">Job Prediction</span></a></li>
+            <li><a href="{% url 'locationbased' %}"><i class="fa fa-briefcase"></i><span class="nav-text" style="color: white;">Job Search</span></a></li>
+  
+  
+            <li class="nav-label first" style="color: white;">College suggestion</li>
+            <li><a href="{% url 'eamcet' %}"><i class="fa fa-university"></i><span class="nav-text" style="color: white;">Eamcet Colleges</span></a></li>
+            
+  
+            <li class="nav-label first" style="color: white;">College Guide</li>
+            <li><a href="{% url 'chatbot' %}"><i class="fas fa-robot"></i><span class="nav-text" style="color: white;">Chatbot</span></a></li>
+    
+  
+            <!-- Feedback Analytics Section -->
+            <li class="nav-label first" style="color: white;">FeedBack Analytics</li>
+            <li><a href="{% url 'feedback' %}"><i class="fa fa-comments"></i><span class="nav-text" style="color: white;">Feedback</span></a></li>
+            <li><a href="{% url 'feedback_graph' %}"><i class="fas fa-chart-line"></i><span class="nav-text" style="color: white;">Feedback Graph</span></a></li>
+            
+            <!-- College Guide Section -->
+      
+            <!-- College Suggestion Section -->
+           
+        </ul>
+      </div>
+  </div>
+  
+        
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+        <!--**********************************
+            Content body start
+        ***********************************-->
+
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            <style>
+        
+        
+                .brand-logo img {
+                    max-width: 100%;
+                    height: auto;
+                }
+        
+                /* Mobile responsive styles */
+                @media screen and (max-width: 768px) {
+                    .nav-header {
+                        padding: 10px;
+                    }
+        
+                    .brand-logo img {
+                        max-width: 150px; /* Limit logo size on smaller screens */
+                    }
+        
+                    /* Make the nav-header content stack vertically on mobile */
+                    .nav-header {
+                        flex-direction: column;
+                        align-items: flex-start;
+                    }
+                }
+        
+                /* Optional: Style adjustments for mobile */
+                @media screen and (max-width: 480px) {
+                    .brand-logo img {
+                        max-width: 120px; /* Smaller logo on very small screens */
+                    }
+                }
+            </style>
+        
+        <div class="content-body">
+            <div class="container-fluid">
+                
+                <!-- row -->
+                <div class="row">
+                    <div class="col-lg-12">
+                       
+                                <div class="container">
+                                    <div class="page-inner">
+                                        <div class="col-md-12">
+                                            <div class="max-w-6xl w-full  rounded-lg p-0">
+                                                <div class="relative w-full  overflow-hidden rounded-lg bg-transparent">
+                                                    <script src="https://cdn.tailwindcss.com"></script>
+                                                    <style>
+                                                        body {
+                                                            background-color: #ffffff;
+                                                        }
+                                                        iframe {
+                                                            background-color: #ffffff;
+                                                        }
+                                                    </style>
+                                                </head>
+                                                <body class="bg-white">
+                                                
+                                                    <div class="max-w-6xl w-full bg-white shadow-lg rounded-lg">
+                                                        <div class="relative w-full overflow-hidden rounded-lg bg-white">
+                                                            <iframe 
+                                                            src="https://asnvs-job-recommendation-project.hf.space?__theme=light"
+                                                            frameborder="0"
+                                                                class="w-full h-[450px] md:h-[550px] lg:h-[600px] rounded-lg">
+                                                            </iframe>
+                                                        </div>
+                                                    </div>
+                                                
+                                                    
+                                                
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                       
+                </div>
+            </div>
+        </div>
+        
+  
+
+        
+        <!--**********************************
+            Content body end
+        ***********************************-->
+
+
+        <!--**********************************
+            Footer start
+        ***********************************-->
+ 
+        <!--**********************************
+            Footer end
+        ***********************************-->
+
+        <!--**********************************
+           Support ticket button start
+        ***********************************-->
+
+        <!--**********************************
+           Support ticket button end
+        ***********************************-->
+
+        
+    </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <script src="{% static 'vendor/global/global.min.js' %}"></script>
+    <script src="{% static 'js/quixnav-init.js' %}" ></script>
+    <script src="{% static 'js/custom.min.js' %}" ></script>
+
+
+    <!-- Vectormap -->
+    <script src="{% static 'vendor/raphael/raphael.min.js' %}"></script>
+    <script src="{% static 'vendor/morris/morris.min.js' %}"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    
+
+    <script src="{% static 'vendor/circle-progress/circle-progress.min.js' %}"></script>
+    <script src="{% static 'vendor/chart.js/Chart.bundle.min.js' %}"></script>
+
+    <script src="{% static 'vendor/gaugeJS/dist/gauge.min.js' %}"></script>
+
+    <!--  flot-chart js -->
+    <script src="{% static 'vendor/flot/jquery.flot.js' %}"></script>
+    <script src="{% static 'vendor/flot/jquery.flot.resize.js' %}"></script>
+
+    <!-- Owl Carousel -->
+    <script src="{% static 'vendor/owl-carousel/js/owl.carousel.min.js' %}"></script>
+
+    <!-- Counter Up -->
+    <script src="{% static 'vendor/jqvmap/js/jquery.vmap.min.js' %}"></script>
+    <script src="{% static 'vendor/jqvmap/js/jquery.vmap.usa.js' %}"></script>
+    <script src="{% static 'vendor/jquery.counterup/jquery.counterup.min.js' %}"></script>
+
+
+    <script src="{% static 'js/dashboard/dashboard-1.js' %}"></script>
+
+</body>
+
+</html>

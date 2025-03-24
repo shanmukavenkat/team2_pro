@@ -24,3 +24,14 @@ class PredictForm(forms.Form):
         ],
         widget=forms.Select(attrs={'class': 'form-control'})
     )
+
+
+
+
+from django import forms
+
+class InputForm(forms.Form):
+    rank = forms.IntegerField(label='Rank')
+    gender = forms.CharField(label='Gender')
+    allocated_category = forms.CharField(label='Allocated Category')
+    region = forms.CharField(label='Region')

@@ -1,3 +1,24 @@
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -13,10 +34,15 @@
     <link rel="stylesheet" href="{% static 'vendor/owl-carousel/css/owl.theme.default.min.css' %}">
     <link href="{% static 'vendor/jqvmap/css/jqvmap.min.css' %}" rel="stylesheet">
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-
+    <style>
+     
+        iframe {
+            background-color: #0e1117;
+        }
+    </style>
 
 </head>
 
@@ -45,106 +71,120 @@
         <!--**********************************
             Nav header start
         ***********************************-->
-        <div class="nav-header">
-            <a href="index.html" class="brand-logo">
-           <h3 style="color: aliceblue;">&nbsp;AP&nbsp;</h3>
-           <h6 style="color: aliceblue; padding-top: 2px;">College Guide</h6>
-            </a>
-
-            <div class="nav-control">
-                <div class="hamburger">
-                    <span class="line"></span><span class="line"></span><span class="line"></span>
-                </div>
-            </div>
-        </div>
-        <!--**********************************
-            Nav header end
-        ***********************************-->
-
-        <!--**********************************
-            Header start
-        ***********************************-->
-        <div class="header">
-            <div class="header-content">
-                <nav class="navbar navbar-expand">
-                    <div class="collapse navbar-collapse justify-content-between">
-                        <div class="header-left">
-    <div class="search_bar dropdown" id="searchBar" style="display: none;">
-        <span class="search_icon p-3 c-pointer" data-toggle="dropdown">
-            <i class="mdi mdi-magnify"></i>
-        </span>
-        <div class="dropdown-menu p-0 m-0">
-            <form>
-                <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-            </form>
-        </div>
+       
+<div class="nav-header py-5">
+<a href="{% url 'index' %}" class="brand-logo">
+    <img src="{% static 'aps.png' %}" alt="AP College Guide Logo" class="logo-img">
+</a>
+<div class="nav-control">
+    <div class="hamburger">
+        <span class="line"></span><span class="line"></span><span class="line"></span>
     </div>
+</div>
+</div>
+
+<!--**********************************
+Nav header end
+***********************************-->
+
+<!--**********************************
+Header start
+***********************************-->
+<div class="header">
+<div class="header-content">
+    <nav class="navbar navbar-expand">
+        <div class="collapse navbar-collapse justify-content-between">
+            <div class="header-left">
+<div class="search_bar dropdown" id="searchBar" style="display: none;">
+<span class="search_icon p-3 c-pointer" data-toggle="dropdown">
+<i class="mdi mdi-magnify"></i>
+</span>
+<div class="dropdown-menu p-0 m-0">
+<form>
+    <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+</div>
+</div>
 </div>
 
 <script>
 // Function to toggle the visibility of the search bar
 function toggleSearchBar() {
-    const searchBar = document.getElementById('searchBar');
-    if (searchBar.style.display === 'none') {
-        searchBar.style.display = 'block';
-    } else {
-        searchBar.style.display = 'none';
-    }
+const searchBar = document.getElementById('searchBar');
+if (searchBar.style.display === 'none') {
+searchBar.style.display = 'block';
+} else {
+searchBar.style.display = 'none';
+}
 }
 
-// Call toggleSearchBar() when needed to show/hide the search bar
-// Example: show the search bar after a delay or on button click
 </script>
 
-               
-                    </div>
-                </nav>
-            </div>
-        </div>
-        <!--**********************************
-            Header end ti-comment-alt
-        ***********************************-->
+<ul class="navbar-nav header-right">
+<li class="nav-item dropdown header-profile">
+<a class="nav-link" href="#" role="button" data-toggle="dropdown">
+<i class="mdi mdi-account"></i> <!-- User Icon -->
+</a>
+<div class="dropdown-menu dropdown-menu-right">
+<!-- Profile Link -->
+<a href="{% url 'profile' %}" class="dropdown-item">
+    <i class="icon-user"></i> <!-- Icon for Profile -->
+    <span class="ml-2">Profile</span>
+</a>
+<!-- Logout Link -->
+<a href="{% url 'user_login' %}" class="dropdown-item">
+    <i class="icon-key"></i>
+    <span class="ml-2">Logout</span>
+</a>
+</div>
+</li>
+</ul>
 
-        <!--**********************************
-            Sidebar start
-        ***********************************-->
-        <div class="quixnav">
-            <div class="quixnav-scroll">
-                <ul class="metismenu" id="menu" style="padding-top: 15px;">
-                    <li><a href="{% url 'index' %}"><i class="icon icon-single-04"></i><span class="nav-text">Dashboard</span></a></li>
-        
-                    <li class="nav-label first">Job Predication</li>
-                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="icon icon-single-04"></i><span class="nav-text">Features</span></a>
-                        <ul aria-expanded="false">
-                            <li><a href="{% url 'features' %}">Job Predication</a></li>
-                            <li><a href="{% url 'new_features' %}">Job Details</a></li>
-                        </ul>
-                    </li>
-        
-                    <li class="nav-label">Apps</li>
-                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="icon icon-app-store"></i><span class="nav-text">Apps</span></a>
-                        <ul aria-expanded="false">
-                            <li><a href="{% url 'profile' %}">Profile</a></li>
-                            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">FeedBack Analytics</a>
-                                <ul aria-expanded="false">
-                                    <li><a href="{% url 'feedback' %}">Feedback</a></li>
-                                    <li><a href="{% url 'feedback_graph' %}">Feedback Graph</a></li>
-                                </ul>
-                            </li>
-                            
-                        </ul>
-                    </li>
-        
-                    <li class="nav-label">CHATBOT</li>
-                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="icon icon-single-copy-06"></i><span class="nav-text">VVIT</span></a>
-                        <ul aria-expanded="false">
-                            <li><a href="{% url 'chatbot' %}">ChatBot</a></li>
-                            <li><a href="{% url 'information' %}">Information</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
         </div>
+    </nav>
+</div>
+</div>
+<!--**********************************
+Header end ti-comment-alt
+***********************************-->
+
+<!--**********************************
+Sidebar start
+***********************************-->
+<div class="quixnav">
+    <div class="quixnav-scroll">
+        <ul class="metismenu" id="menu" style="padding-top: 15px;">
+            <!-- User Dashboard Section -->
+            <li class="nav-label first" style="color: azure;">User Dashboard</li>
+            <li><a href="{% url 'index' %}"><i class="fas fa-tachometer-alt"></i><span class="nav-text" style="color: white;">Dashboard</span></a></li>
+            
+            <!-- Job Search Section -->
+            <li class="nav-label first" style="color: white;">Job Prediction</li>
+            <li><a href="{% url 'features' %}"><i class="fa fa-briefcase"></i><span class="nav-text" style="color: white;">Job Prediction</span></a></li>
+            <li><a href="{% url 'locationbased' %}"><i class="fa fa-briefcase"></i><span class="nav-text" style="color: white;">Job Search</span></a></li>
+  
+  
+            <li class="nav-label first" style="color: white;">College suggestion</li>
+            <li><a href="{% url 'eamcet' %}"><i class="fa fa-university"></i><span class="nav-text" style="color: white;">Eamcet Colleges</span></a></li>
+            
+  
+            <li class="nav-label first" style="color: white;">College Guide</li>
+            <li><a href="{% url 'chatbot' %}"><i class="fas fa-robot"></i><span class="nav-text" style="color: white;">Chatbot</span></a></li>
+    
+  
+            <!-- Feedback Analytics Section -->
+            <li class="nav-label first" style="color: white;">FeedBack Analytics</li>
+            <li><a href="{% url 'feedback' %}"><i class="fa fa-comments"></i><span class="nav-text" style="color: white;">Feedback</span></a></li>
+            <li><a href="{% url 'feedback_graph' %}"><i class="fas fa-chart-line"></i><span class="nav-text" style="color: white;">Feedback Graph</span></a></li>
+            
+            <!-- College Guide Section -->
+      
+            <!-- College Suggestion Section -->
+           
+        </ul>
+      </div>
+  </div>
+  
         
         <!--**********************************
             Sidebar end
@@ -155,56 +195,104 @@ function toggleSearchBar() {
         ***********************************-->
         <div class="content-body">
             <div class="container-fluid">
-                <div class="row page-titles mx-0">
-                    <div class="col-sm-6 p-md-0">
-                        <div class="welcome-text">
-                            <h4>Hi, welcome back!</h4>
-                            <span class="ml-1">Email</span>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="javascript:void(0)">Email</a></li>
-                            <li class="breadcrumb-item active"><a href="javascript:void(0)">Inbox</a></li>
-                        </ol>
-                    </div>
-                </div>
-                <!-- row -->
-
-                <div class="container mt-4">
-                    <div class="card shadow">
-                        <div class="card-header bg-primary text-white text-center fw-bold">Chatbot</div>
-                        <div class="card-body chat-body overflow-auto p-3" style="height: 500px;">
-                            {% for conversation in conversations %}
-                                <div class="d-flex flex-column">
-                                    <div class="alert alert-success align-self-start">{{ conversation.user_message }}</div>
-                                    <div class="alert alert-primary align-self-end">{{ conversation.bot_response }}</div>
-                                </div>
-                            {% endfor %}
-                        </div>
-                        <div class="card-footer">
-                            <form method="post" class="d-flex align-items-center">
-                                {% csrf_token %}
-                                <input type="text" name="message" class="form-control me-2" placeholder="Type your message..." required>
-                                <button type="submit" class="btn btn-primary">Send</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
                 
+               <!-- Chatbot Container -->
+<div class="container">
+    <div>
+        <div class="overflow-auto p-3 chat-body" style="height: 500px;">
+            {% for conversation in conversations %}
+                <div class="d-flex flex-column">
+                    <div class="alert alert-success align-self-start" style="color: #0e1117;">{{ conversation.user_message }}</div>
+                    <div class="alert alert-primary align-self-end" style="color: #0e1117;">{{ conversation.bot_response }}</div>
+                </div>
+            {% endfor %}
+        </div>
+
+        <!-- Chat Input & Buttons -->
+        <div class="card-footer">
+            <div class="row g-2">
+                <div class="col-11">
+                    <form method="post" class="d-flex">
+                        {% csrf_token %}
+                        <!-- Input with Microphone Icon -->
+                        <div class="input-group">
+                            <button type="button" class="btn btn-outline-secondary" id="micButton">
+                                <i class="fa fa-microphone"></i> <!-- Microphone Icon -->
+                            </button>
+                            <input type="text" name="message" class="form-control me-2" id="messageInput" placeholder="Type your message..." required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send</button>
+                    </form>
+                </div>
+                <div class="col-1">
+                    <form method="post" action="{% url 'delete_conversations' %}">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger w-100" onclick="return confirm('Are you sure you want to delete all conversations?')">Delete</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Add Speech-to-Text functionality -->
+<script>
+    // Check if the Web Speech API is supported
+    if ('webkitSpeechRecognition' in window) {
+        const micButton = document.getElementById('micButton');
+        const messageInput = document.getElementById('messageInput');
+        const recognition = new webkitSpeechRecognition();
+
+        recognition.continuous = true; // Keep the speech recognition active
+        recognition.interimResults = true; // Get real-time results
+
+        recognition.onstart = function() {
+            micButton.innerHTML = '<i class="fa fa-microphone-slash"></i>'; // Change to microphone slash when speaking
+        };
+
+        recognition.onend = function() {
+            micButton.innerHTML = '<i class="fa fa-microphone"></i>'; // Revert back to microphone icon when speech ends
+        };
+
+        recognition.onresult = function(event) {
+            let transcript = '';
+            for (let i = event.resultIndex; i < event.results.length; i++) {
+                transcript += event.results[i][0].transcript;
+            }
+            messageInput.value = transcript; // Set the speech result into the input field
+        };
+
+        // Start speech recognition on button click
+        micButton.addEventListener('click', function() {
+            if (recognition.lang !== 'en-US') {
+                recognition.lang = 'en-US'; // Set language to English
+            }
+            recognition.start(); // Start recognizing speech
+        });
+    } else {
+        alert('Speech recognition is not supported in this browser.');
+    }
+</script>
+
+<!-- Include Font Awesome for microphone icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+        
                 <script>
                     document.addEventListener("DOMContentLoaded", function () {
                         const chatBody = document.querySelector(".chat-body");
-                        chatBody.scrollTop = chatBody.scrollHeight;
+                        if (chatBody) {
+                            chatBody.scrollTop = chatBody.scrollHeight;
+                        }
                     });
-                
+        
                     document.querySelector("form").addEventListener("submit", function (event) {
                         setTimeout(() => {
                             document.querySelector("input[name='message']").value = "";
                         }, 10);
                     });
                 </script>
-                
+        
                 <style>
                     .chat-body {
                         display: flex;
@@ -216,10 +304,11 @@ function toggleSearchBar() {
                         word-wrap: break-word;
                     }
                 </style>
-                
-                </div>
+        
             </div>
         </div>
+        
+        
         <!--**********************************
             Content body end
         ***********************************-->
@@ -228,7 +317,7 @@ function toggleSearchBar() {
         <!--**********************************
             Footer start
         ***********************************-->
-      <!---snvsUpdated--->
+       
         <!--**********************************
             Footer end
         ***********************************-->
@@ -250,7 +339,6 @@ function toggleSearchBar() {
     <!--**********************************
         Scripts
     ***********************************-->
-    <!-- Required vendors -->
     <script src="{% static 'vendor/global/global.min.js' %}"></script>
     <script src="{% static 'js/quixnav-init.js' %}" ></script>
     <script src="{% static 'js/custom.min.js' %}" ></script>
@@ -260,6 +348,9 @@ function toggleSearchBar() {
     <script src="{% static 'vendor/raphael/raphael.min.js' %}"></script>
     <script src="{% static 'vendor/morris/morris.min.js' %}"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    
 
     <script src="{% static 'vendor/circle-progress/circle-progress.min.js' %}"></script>
     <script src="{% static 'vendor/chart.js/Chart.bundle.min.js' %}"></script>
@@ -278,7 +369,6 @@ function toggleSearchBar() {
     <script src="{% static 'vendor/jqvmap/js/jquery.vmap.usa.js' %}"></script>
     <script src="{% static 'vendor/jquery.counterup/jquery.counterup.min.js' %}"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <script src="{% static 'js/dashboard/dashboard-1.js' %}"></script>
 

@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{% static 'vendor/owl-carousel/css/owl.theme.default.min.css' %}">
     <link href="{% static 'vendor/jqvmap/css/jqvmap.min.css' %}" rel="stylesheet">
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
 
 
@@ -43,105 +44,120 @@
         <!--**********************************
             Nav header start
         ***********************************-->
-        <div class="nav-header">
-            <a href="index.html" class="brand-logo">
-           <h3 style="color: aliceblue;">&nbsp;AP&nbsp;</h3>
-           <h6 style="color: aliceblue; padding-top: 2px;">College Guide</h6>
-            </a>
-
-            <div class="nav-control">
-                <div class="hamburger">
-                    <span class="line"></span><span class="line"></span><span class="line"></span>
-                </div>
-            </div>
-        </div>
-        <!--**********************************
-            Nav header end
-        ***********************************-->
-
-        <!--**********************************
-            Header start
-        ***********************************-->
-        <div class="header">
-            <div class="header-content">
-                <nav class="navbar navbar-expand">
-                    <div class="collapse navbar-collapse justify-content-between">
-                        <div class="header-left">
-    <div class="search_bar dropdown" id="searchBar" style="display: none;">
-        <span class="search_icon p-3 c-pointer" data-toggle="dropdown">
-            <i class="mdi mdi-magnify"></i>
-        </span>
-        <div class="dropdown-menu p-0 m-0">
-            <form>
-                <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-            </form>
-        </div>
+       
+<div class="nav-header py-5">
+<a href="{% url 'index' %}" class="brand-logo">
+    <img src="{% static 'aps.png' %}" alt="AP College Guide Logo" class="logo-img">
+</a>
+<div class="nav-control">
+    <div class="hamburger">
+        <span class="line"></span><span class="line"></span><span class="line"></span>
     </div>
+</div>
+</div>
+
+<!--**********************************
+Nav header end
+***********************************-->
+
+<!--**********************************
+Header start
+***********************************-->
+<div class="header">
+<div class="header-content">
+    <nav class="navbar navbar-expand">
+        <div class="collapse navbar-collapse justify-content-between">
+            <div class="header-left">
+<div class="search_bar dropdown" id="searchBar" style="display: none;">
+<span class="search_icon p-3 c-pointer" data-toggle="dropdown">
+<i class="mdi mdi-magnify"></i>
+</span>
+<div class="dropdown-menu p-0 m-0">
+<form>
+    <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+</div>
+</div>
 </div>
 
 <script>
 // Function to toggle the visibility of the search bar
 function toggleSearchBar() {
-    const searchBar = document.getElementById('searchBar');
-    if (searchBar.style.display === 'none') {
-        searchBar.style.display = 'block';
-    } else {
-        searchBar.style.display = 'none';
-    }
+const searchBar = document.getElementById('searchBar');
+if (searchBar.style.display === 'none') {
+searchBar.style.display = 'block';
+} else {
+searchBar.style.display = 'none';
+}
 }
 
-// Call toggleSearchBar() when needed to show/hide the search bar
-// Example: show the search bar after a delay or on button click
 </script>
 
-                        
-                    </div>
-                </nav>
-            </div>
-        </div>
-        <!--**********************************
-            Header end ti-comment-alt
-        ***********************************-->
+<ul class="navbar-nav header-right">
+<li class="nav-item dropdown header-profile">
+<a class="nav-link" href="#" role="button" data-toggle="dropdown">
+<i class="mdi mdi-account"></i> <!-- User Icon -->
+</a>
+<div class="dropdown-menu dropdown-menu-right">
+<!-- Profile Link -->
+<a href="{% url 'profile' %}" class="dropdown-item">
+    <i class="icon-user"></i> <!-- Icon for Profile -->
+    <span class="ml-2">Profile</span>
+</a>
+<!-- Logout Link -->
+<a href="{% url 'user_login' %}" class="dropdown-item">
+    <i class="icon-key"></i>
+    <span class="ml-2">Logout</span>
+</a>
+</div>
+</li>
+</ul>
 
-        <!--**********************************
-            Sidebar start
-        ***********************************-->
-        <div class="quixnav">
-            <div class="quixnav-scroll">
-                <ul class="metismenu" id="menu" style="padding-top: 15px;">
-                    <li><a href="{% url 'index' %}"><i class="icon icon-single-04"></i><span class="nav-text">Dashboard</span></a></li>
-        
-                    <li class="nav-label first">Job Predication</li>
-                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="icon icon-single-04"></i><span class="nav-text">Features</span></a>
-                        <ul aria-expanded="false">
-                            <li><a href="{% url 'features' %}">Job Predication</a></li>
-                            <li><a href="{% url 'new_features' %}">Job Details</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-label">Apps</li>
-                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="icon icon-app-store"></i><span class="nav-text">Apps</span></a>
-                        <ul aria-expanded="false">
-                            <li><a href="{% url 'profile' %}">Profile</a></li>
-                            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">FeedBack Analytics</a>
-                                <ul aria-expanded="false">
-                                    <li><a href="{% url 'feedback' %}">Feedback</a></li>
-                                    <li><a href="{% url 'feedback_graph' %}">Feedback Graph</a></li>
-                                </ul>
-                            </li>
-
-                        </ul>
-                    </li>
-        
-                    <li class="nav-label">CHATBOT</li>
-                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="icon icon-single-copy-06"></i><span class="nav-text">VVIT</span></a>
-                        <ul aria-expanded="false">
-                            <li><a href="{% url 'chatbot' %}">ChatBot</a></li>
-                            <li><a href="{% url 'information' %}">Information</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
         </div>
+    </nav>
+</div>
+</div>
+<!--**********************************
+Header end ti-comment-alt
+***********************************-->
+
+<!--**********************************
+Sidebar start
+***********************************-->
+<div class="quixnav">
+    <div class="quixnav-scroll">
+        <ul class="metismenu" id="menu" style="padding-top: 15px;">
+            <!-- User Dashboard Section -->
+            <li class="nav-label first" style="color: azure;">User Dashboard</li>
+            <li><a href="{% url 'index' %}"><i class="fas fa-tachometer-alt"></i><span class="nav-text" style="color: white;">Dashboard</span></a></li>
+            
+            <!-- Job Search Section -->
+            <li class="nav-label first" style="color: white;">Job Prediction</li>
+            <li><a href="{% url 'features' %}"><i class="fa fa-briefcase"></i><span class="nav-text" style="color: white;">Job Prediction</span></a></li>
+            <li><a href="{% url 'locationbased' %}"><i class="fa fa-briefcase"></i><span class="nav-text" style="color: white;">Job Search</span></a></li>
+  
+  
+            <li class="nav-label first" style="color: white;">College suggestion</li>
+            <li><a href="{% url 'eamcet' %}"><i class="fa fa-university"></i><span class="nav-text" style="color: white;">Eamcet Colleges</span></a></li>
+            
+  
+            <li class="nav-label first" style="color: white;">College Guide</li>
+            <li><a href="{% url 'chatbot' %}"><i class="fas fa-robot"></i><span class="nav-text" style="color: white;">Chatbot</span></a></li>
+    
+  
+            <!-- Feedback Analytics Section -->
+            <li class="nav-label first" style="color: white;">FeedBack Analytics</li>
+            <li><a href="{% url 'feedback' %}"><i class="fa fa-comments"></i><span class="nav-text" style="color: white;">Feedback</span></a></li>
+            <li><a href="{% url 'feedback_graph' %}"><i class="fas fa-chart-line"></i><span class="nav-text" style="color: white;">Feedback Graph</span></a></li>
+            
+            <!-- College Guide Section -->
+      
+            <!-- College Suggestion Section -->
+           
+        </ul>
+      </div>
+  </div>
+  
         
         <!--**********************************
             Sidebar end
@@ -150,23 +166,45 @@ function toggleSearchBar() {
         <!--**********************************
             Content body start
         ***********************************-->
-        <div class="content-body">
 
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            <style>
+        
+        
+                .brand-logo img {
+                    max-width: 100%;
+                    height: auto;
+                }
+        
+                /* Mobile responsive styles */
+                @media screen and (max-width: 768px) {
+                    .nav-header {
+                        padding: 10px;
+                    }
+        
+                    .brand-logo img {
+                        max-width: 150px; /* Limit logo size on smaller screens */
+                    }
+        
+                    /* Make the nav-header content stack vertically on mobile */
+                    .nav-header {
+                        flex-direction: column;
+                        align-items: flex-start;
+                    }
+                }
+        
+                /* Optional: Style adjustments for mobile */
+                @media screen and (max-width: 480px) {
+                    .brand-logo img {
+                        max-width: 120px; /* Smaller logo on very small screens */
+                    }
+                }
+            </style>
+        
+        <div class="content-body">
             <div class="container-fluid">
-                <div class="row page-titles mx-0">
-                    <div class="col-sm-6 p-md-0">
-                        <div class="welcome-text">
-                            <h4>Hi, welcome back!</h4>
-                            <span class="ml-1">Email</span>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="javascript:void(0)">Email</a></li>
-                            <li class="breadcrumb-item active"><a href="javascript:void(0)">Read</a></li>
-                        </ol>
-                    </div>
-                </div>
+                
                 <!-- row -->
                 <div class="row">
                     <div class="col-lg-12">
@@ -194,6 +232,88 @@ function toggleSearchBar() {
                 </div>
             </div>
         </div>
+        
+        <script>
+            // Sample feedback data (replace this with your actual data)
+            const feedbackData = {
+                labels: ['Very Positive', 'Positive', 'Neutral', 'Negative', 'Very Negative'],
+                datasets: [{
+                    label: 'Feedback Count',
+                    data: [{{vp}}, {{p}}, {{ne}}, {{n}}, {{vn}}],   // Replace these with your dynamic data values
+                    backgroundColor: [
+                        'rgba(34, 139, 34, 0.7)',  
+                        'rgba(50, 205, 50, 0.7)',  
+                        'rgba(255, 255, 0, 0.7)',  
+                        'rgba(255, 165, 0, 0.7)', 
+                        'rgba(139, 0, 0, 0.7)',    
+                    ],
+                    borderColor: [
+                        'rgba(34, 139, 34, 1)',   
+                        'rgba(50, 205, 50, 1)',    
+                        'rgba(255, 255, 0, 1)',   
+                        'rgba(255, 165, 0, 1)',   
+                        'rgba(139, 0, 0, 1)',     
+                    ],
+                    borderWidth: 1
+                }]
+            };
+        
+            // Configuration options for the chart
+            const chartOptions = {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) {
+                                if (Number.isInteger(value)) {
+                                    return value;
+                                }
+                            }
+                        },
+                        title: {
+                            display: true,
+                            text: 'Feedback Count'
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Feedback Sentiment'
+                        }
+                    }
+                },
+                animation: {
+                    duration: 2000, // Duration of the animation
+                    easing: 'easeInOutQuart' // Easing function for the animation
+                },
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'bottom', // Position of the legend
+                    },
+                    title: {
+                        display: true,
+                        text: 'Sentiment Analysis Graph',
+                        padding: {
+                            top: 10,
+                            bottom: 30
+                        }
+                    }
+                }
+            };
+        
+            // Create the chart
+            const ctx = document.getElementById('feedbackChart').getContext('2d');
+            const feedbackChart = new Chart(ctx, {
+                type: 'bar',
+                data: feedbackData,
+                options: chartOptions
+            });
+        </script>
+
+        
         <!--**********************************
             Content body end
         ***********************************-->
@@ -202,7 +322,7 @@ function toggleSearchBar() {
         <!--**********************************
             Footer start
         ***********************************-->
-       <!---snvsUpdated--->
+       
         <!--**********************************
             Footer end
         ***********************************-->
@@ -234,66 +354,7 @@ function toggleSearchBar() {
     <script src="{% static 'vendor/morris/morris.min.js' %}"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script>
-        // Sample feedback data (replace this with your actual data)
-        const feedbackData = {
-            labels: ['Very Positive', 'Positive', 'Neutral', 'Negative', 'Very Negative'],
-            datasets: [{
-                label: 'Feedback Count',
-                data: [{{vp}}, {{p}}, {{ne}}, {{n}}, {{vn}}],   // Replace these with your dynamic data values
-                backgroundColor: [
-                    'rgba(34, 139, 34, 0.7)',  
-                    'rgba(50, 205, 50, 0.7)',  
-                    'rgba(255, 255, 0, 0.7)',  
-                    'rgba(255, 165, 0, 0.7)', 
-                    'rgba(139, 0, 0, 0.7)',    
-                ],
-                borderColor: [
-                    'rgba(34, 139, 34, 1)',   
-                    'rgba(50, 205, 50, 1)',    
-                    'rgba(255, 255, 0, 1)',   
-                    'rgba(255, 165, 0, 1)',   
-                    'rgba(139, 0, 0, 1)',     
-                ],
-                borderWidth: 1
-            }]
-        };
     
-        // Configuration options for the chart
-        const chartOptions = {
-            responsive: true,
-            maintainAspectRatio: false,
-            scales: {
-                y: {
-                    beginAtZero: true,
-                    ticks: {
-                        callback: function(value) {
-                            if (Number.isInteger(value)) {
-                                return value;
-                            }
-                        }
-                    },
-                    title: {
-                        display: true,
-                        text: 'Feedback Count'
-                    }
-                },
-                x: {
-                    title: {
-                        display: true,
-                        text: 'Feedback Sentiment'
-                    }
-                }
-            }
-        };
-    
-        // Create the chart
-        const feedbackChart = new Chart(document.getElementById('feedbackChart'), {
-            type: 'bar',
-            data: feedbackData,
-            options: chartOptions
-        });
-    </script>
     
 
     <script src="{% static 'vendor/circle-progress/circle-progress.min.js' %}"></script>

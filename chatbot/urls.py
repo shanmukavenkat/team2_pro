@@ -21,18 +21,27 @@ from django.conf.urls.static import static
 from chatbotapp import views as user_views
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    path('login',user_views.user_logins,name='user_login'),
+    path('register',user_views.user_registers,name='user_register'),
+    path('',user_views.index,name='home'),
+    path('contact',user_views.contact,name='contact'),
+    path('eamcet',user_views.eamcet,name='eamcet'),
+    path('locationbased',user_views.locationbased,name='locationbased'),
     path('user/index', user_views.user_index, name="index"),
     path('user/profile', user_views.user_profile, name="profile"),
     path('user/calender', user_views.user_calender, name="calender"),
     path('user/feedback', user_views.user_feedback, name="feedback"),
     path('user/feedback-graph', user_views.user_feedback_graph, name="feedback_graph"),
     path('user/chatbot', user_views.user_chatbot, name="chatbot"),
+    path('chatbot/delete/', user_views.delete_conversations, name='delete_conversations'),
+
     path('user/information', user_views.user_information, name="information"),
     path('user/features', user_views.user_feature, name="features"),
     path('user/new-features', user_views.user_new_feature, name="new_features"),
     path('user/register', user_views.user_register, name="register"),
     path('user/otp', user_views.otp, name="otp"),
-    path('', user_views.user_login, name="login"),
+    path('userlog', user_views.user_login, name="login"),
     path('user/lock-screen', user_views.user_screen_lock, name="lock_screen"),
     path('jobs/user/', user_views.job_list, name='job_list'),
     path('job/<int:job_id>/', user_views.job_detail, name='job_detail'),
